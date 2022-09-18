@@ -1,0 +1,41 @@
+.navbar-container{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.navbar-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+.navbar-logo{
+    color: white;
+}
+
+.search-input{
+    width: 343px;
+    height: 42px;
+    border-radius: 12px 0 0 12px;
+    border: solid 1px #EF3636;
+    padding-left: 8px;
+}
+
+.search-input::placeholder{
+    color: gray;
+}
+
+.search-icon{
+    color: white;
+    width: 32px;
+}
+
+.search-button{
+    height: 42px;
+    border-radius: 0 12px 12px 0;
+    border: solid 1px #EF3636;
+    background-color: #EF3636;
+}

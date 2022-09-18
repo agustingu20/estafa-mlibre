@@ -1,17 +1,18 @@
 .footer-wrapper {
   background-color: var(--clr-dark);
   color: #fff;
-  font-size: 0.8em;
-  width: 100%;
   padding: 1rem;
+  width: 100%;
+  font-size: 0.8em;
 }
+
 
 .footer-wrapper a{
     color: #fff;
     text-decoration: none;
 }
 
-.footer-wrapper form.suscribir{
+.footer-wrapper .suscribir{
     display: none;
 }
 
@@ -60,11 +61,73 @@
 
 
 @media screen and (min-width: 900px) {
-    .footer-wrapper form.suscribir{
+    .footer-wrapper .suscribir{
+        width: 100%;
         display: flex;
+        align-items: center;
+        justify-content: stretch;
+        gap: 3rem;
+        margin: 1.5rem 0 4.5rem;
+    }
+
+    .suscribir .text{
+        width: 22rem;
+    }
+
+    .text h3{
+        font-size: 1.7rem;
+    }
+
+    .text span.resaltar{
+        color: var(--clr-rojo);
+    }
+
+    .suscribir .formulario{
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    .formulario input{
+        flex: 1;
+        padding: 0.5rem;
+        border-radius: 7px;
+        border: .5px solid var(--clr-rojo);
+        background-color: transparent;
+    }
+
+    .formulario button{
+        border-radius: 7px;
+        padding: .4rem 1.5rem;
+        background-color: var(--clr-rojo);
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
     }
 
     .footer-wrapper .seccion-primaria{
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .wrapper{
+        max-width: 80%;
+        margin: 0 auto;
+        font-size: 1.1rem;
+    }
+
+    .columna .titulo-columna{
+        font-size: 1.2rem;
+    }
+
+    .seccion-secundaria{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .wrapper{
+        max-width: 70%;
     }
 }

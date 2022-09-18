@@ -105,7 +105,16 @@
     }
 
     .footer-wrapper .seccion-primaria{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .seccion-primaria .columna{
+        height: 200px;
+    }
+
+    .columna-uno{
+        max-width: 20%;
     }
 }
 
@@ -126,7 +135,7 @@
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1400px){
     .wrapper{
         max-width: 70%;
     }

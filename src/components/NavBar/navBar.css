@@ -1,7 +1,7 @@
 .navbar-container {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #1A1A1A;
 }
 
 .navbar-wrapper {
@@ -20,7 +20,7 @@
 .search-input {
   width: 343px;
   height: 42px;
-  border-radius: 12px 0 0 12px;
+  border-radius: 7px 0 0 7px;
   border: solid 1px #ef3636;
   padding-left: 8px;
 }
@@ -40,7 +40,7 @@
 
 .search-button {
   height: 42px;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 7px 7px 0;
   border: solid 1px #ef3636;
   background-color: #ef3636;
 }

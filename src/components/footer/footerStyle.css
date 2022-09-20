@@ -93,6 +93,8 @@
         border-radius: 7px;
         border: .5px solid var(--clr-rojo);
         background-color: transparent;
+        color: #fff;
+        caret-color: var(--clr-rojo);
     }
 
     .formulario button{

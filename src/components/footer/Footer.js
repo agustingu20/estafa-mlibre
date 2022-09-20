@@ -1,10 +1,11 @@
+import Container from 'react-bootstrap/Container';
 import './footerStyle.css';
 
 const Footer = () => {
   return (
     <footer className='footer-wrapper'>
-      <div className='wrapper'>
-        <div className='suscribir'>
+      <Container fluid className='wrapper'>
+        <Container fluid className='suscribir p-0'>
           <div className='text'>
             <h3>OUR NEWSSELLER</h3>
             <p>
@@ -18,7 +19,7 @@ const Footer = () => {
             <input type='email' />
             <button>Suscribir</button>
           </form>
-        </div>
+        </Container>
         <div className='seccion-primaria'>
           <div className='columna columna-uno'>
             <h3>Estafa MLibre</h3>
@@ -61,7 +62,7 @@ const Footer = () => {
           <p>COPYRIGHT 2022 ESTAFA MLIBRE</p>
           <p>ALL RIGHT RESERVED</p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

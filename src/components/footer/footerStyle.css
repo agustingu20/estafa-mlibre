@@ -102,6 +102,10 @@
         caret-color: var(--clr-rojo);
     }
 
+    .formulario input.error{
+        outline: 4px solid var(--clr-rojo-hover);
+    }
+
     .formulario button{
         border-radius: 7px;
         padding: .4rem 2rem;

@@ -1,8 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import './footerStyle.css';
+import { useForm } from 'react-hook-form';
+import classNames from 'classnames';
 import LogoSL from '../../assets/logo-estafa-libre.png';
 
 const Footer = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
   return (
     <footer className='footer-wrapper'>
       <Container fluid className='wrapper'>
@@ -16,8 +21,11 @@ const Footer = () => {
               compra.
             </p>
           </div>
-          <form className='formulario'>
-            <input type='email' placeholder='ejemplo@gmail.com'/>
+          <form className='formulario' onSubmit={handleSubmit(onSubmit)}>
+            <input type='email' className={classNames({
+              error: errors.suscribir,
+              '': !errors.suscribir,
+            })} placeholder='ejemplo@gmail.com' {...register('suscribir', { required: true })}/>
             <button>Suscribir</button>
           </form>
         </div>
@@ -25,7 +33,7 @@ const Footer = () => {
           <div className='columna columna-uno'>
             <img className='logo' src={LogoSL} alt="Logo de Estafa ML" />
             <div className='texto'>
-              Lorem ipsum dolor sit amet consectetur adipisici.
+              Para estafar se necesitan dos, uno que mienta y otro que crea.
             </div>
             <div className='redes'>
               <a href='*'>

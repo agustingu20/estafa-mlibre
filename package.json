@@ -12,17 +12,19 @@
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-macros": "^3.1.0",
     "bootstrap": "^5.2.1",
+    "classnames": "^2.3.2",
     "eslint-config-airbnb": "^19.0.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.36.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test . --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -42,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-watch-typeahead": "^0.6.5"
   }
 }

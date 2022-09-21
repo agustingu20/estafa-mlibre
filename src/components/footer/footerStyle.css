@@ -3,13 +3,20 @@
   color: #fff;
   padding: 1rem;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
+.footer-wrapper p{
+    margin-bottom: 0;
+}
 
 .footer-wrapper a{
     color: #fff;
     text-decoration: none;
+}
+
+.footer-wrapper a:hover{
+    color: var(--clr-rojo);
 }
 
 .footer-wrapper .suscribir{
@@ -32,19 +39,22 @@
 .columna .titulo-columna {
   color: var(--clr-rojo);
   font-weight: 600;
-  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
-.columna-uno h3 {
-  font-size: 1.5rem;
+.columna-uno img.logo{
+    height: 50px;
+    object-fit: contain;
+    object-position: left;
 }
 
 .columna-uno .redes {
-  font-size: 2.2rem;
   display: flex;
   gap: 1rem;
+  font-size: 3rem;
 }
+
+
 
 .separador {
   background-color: var(--clr-rojo);
@@ -55,7 +65,6 @@
 
 .seccion-secundaria{
     text-align: center;
-    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -67,15 +76,11 @@
         align-items: center;
         justify-content: stretch;
         gap: 3rem;
-        margin: 1.5rem 0 4.5rem;
+        margin: 1rem 0 1.5rem;
     }
-
+    
     .suscribir .text{
-        width: 22rem;
-    }
-
-    .text h3{
-        font-size: 1.7rem;
+        width: 33rem;
     }
 
     .text span.resaltar{
@@ -99,11 +104,15 @@
 
     .formulario button{
         border-radius: 7px;
-        padding: .4rem 1.5rem;
+        padding: .4rem 2rem;
         background-color: var(--clr-rojo);
         border: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .formulario button:hover{
+        background-color: var(--clr-rojo-hover);
     }
 
     .footer-wrapper .seccion-primaria{
@@ -124,11 +133,6 @@
     .wrapper{
         max-width: 80%;
         margin: 0 auto;
-        font-size: 1.1rem;
-    }
-
-    .columna .titulo-columna{
-        font-size: 1.2rem;
     }
 
     .seccion-secundaria{

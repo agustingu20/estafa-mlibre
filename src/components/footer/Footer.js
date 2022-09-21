@@ -1,11 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import './footerStyle.css';
+import LogoSL from '../../assets/logo-estafa-libre.png';
 
 const Footer = () => {
   return (
     <footer className='footer-wrapper'>
       <Container fluid className='wrapper'>
-        <Container fluid className='suscribir p-0'>
+        <div className='suscribir p-0'>
           <div className='text'>
             <h3>OUR NEWSSELLER</h3>
             <p>
@@ -16,13 +17,13 @@ const Footer = () => {
             </p>
           </div>
           <form className='formulario'>
-            <input type='email' />
+            <input type='email' placeholder='ejemplo@gmail.com'/>
             <button>Suscribir</button>
           </form>
-        </Container>
+        </div>
         <div className='seccion-primaria'>
           <div className='columna columna-uno'>
-            <h3>Estafa MLibre</h3>
+            <img className='logo' src={LogoSL} alt="Logo de Estafa ML" />
             <div className='texto'>
               Lorem ipsum dolor sit amet consectetur adipisici.
             </div>

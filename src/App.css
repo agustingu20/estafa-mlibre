@@ -11,3 +11,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #fff;
+}
+
+.backgroud-general {
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    173deg,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(26, 26, 26, 1) 7.15%,
+    rgba(26, 26, 26, 1) 93%,
+    rgba(255, 255, 255, 1) 93.15%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}

@@ -1,5 +1,8 @@
 import './aboutUs.css';
 import Carousel from 'react-bootstrap/Carousel';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Box from '../../assets/box.png';
 import Ipone from '../../assets/ipone.png';
 import Xiaom from '../../assets/xiaom.png';
@@ -12,10 +15,9 @@ const AboutUs = () => {
         <div className='descripcion'>
           <h2>SOMOS ESTAFA MLIBRE</h2>
           <p>
-            Somo la versión malvada de ML, no ofrecemos
-            descuentos (paguen lo que corresponde, ratas) y hacemos
-            los envíos cuando se pueda, vaya uno a saber cuando
-            llega.
+            Somo la versión malvada de ML, no ofrecemos descuentos (paguen lo
+            que corresponde, ratas) y hacemos los envíos cuando se pueda, vaya
+            uno a saber cuando llega.
           </p>
         </div>
         <div className='paquete'>
@@ -27,24 +29,22 @@ const AboutUs = () => {
           <i className='icon fa-solid fa-truck-fast'></i>
           <h3>Envios</h3>
           <p>
-            NADA ES GRATIS EN ESTA VIDA. SI QUIEREN QUE LES LLEGUE A SU
-            CASA GARPEN AL CORREO, SI NO, VAYAN A BUSCARLO A DONDE VIVA EL VENDEDOR
+            NADA ES GRATIS EN ESTA VIDA. SI QUIEREN QUE LES LLEGUE A SU CASA
+            GARPEN AL CORREO, SI NO, VAYAN A BUSCARLO A DONDE VIVA EL VENDEDOR
           </p>
         </div>
         <div className='caracteristica'>
           <i className='icon fa-solid fa-headset'></i>
           <h3>Soporte</h3>
           <p>
-            SEGURO AL MENOS UN MENSAJE AUTOMATICO TE LLEGA, PERO CUANDO TE RESPONDERA
-            UNA PERSONA REAL, NO SABEMOS.
+            SEGURO AL MENOS UN MENSAJE AUTOMATICO TE LLEGA, PERO CUANDO TE
+            RESPONDERA UNA PERSONA REAL, NO SABEMOS.
           </p>
         </div>
         <div className='caracteristica'>
           <i className='icon fa-solid fa-tags'></i>
           <h3>AHORRO</h3>
-          <p>
-            NO HAY DESCUENTO, ASÍ QUE NO HAY AHORRO.
-          </p>
+          <p>NO HAY DESCUENTO, ASÍ QUE NO HAY AHORRO.</p>
         </div>
       </div>
       <div className='wrapper-datos'>
@@ -80,8 +80,8 @@ const AboutUs = () => {
             <Carousel.Caption>
               <h3>Lgante</h3>
               <p>
-                quise pner a bender mis cemillas de marihuana i no me dejn, que ortiva son
-                loco.
+                quise pner a bender mis cemillas de marihuana i no me dejn, que
+                ortiva son loco.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -89,7 +89,8 @@ const AboutUs = () => {
             <Carousel.Caption>
               <h3>Pepito Sanchez</h3>
               <p>
-                Gracias por la caja vacia que me llego, me hacia falta para guarda mi ropa.
+                Gracias por la caja vacia que me llego, me hacia falta para
+                guarda mi ropa.
               </p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -113,14 +114,16 @@ const AboutUs = () => {
       </div>
       <div className='wrapper-marcas'>
         <h2>Grandes marcas nos acompañan</h2>
-        <div className='marca'>
-          <img src={Ipone} alt='logo Ipone' />
-        </div>
-        <div className='marca'>
-          <img src={Xiaom} alt='Logo Xiaom' />
-        </div>
-        <div className='marca'>
-          <img src={Mike} alt='Logo Mike' />
+        <div className='grupo-marcas'>
+          <div className='marca'>
+            <img src={Ipone} alt='logo Ipone' />
+          </div>
+          <div className='marca'>
+            <img src={Xiaom} alt='Logo Xiaom' />
+          </div>
+          <div className='marca'>
+            <img src={Mike} alt='Logo Mike' />
+          </div>
         </div>
       </div>
     </section>

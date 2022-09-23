@@ -1,13 +1,11 @@
 import './App.css';
-import Footer from './components/footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutUs from './pages/AboutUs/AboutUs';
 
 function App() {
   return (
     <div className="App">
-      <h1>Bienvenidos a Estafa Mlibre</h1>
-      <h2>Clon E-commerce de ML.</h2>
-      <Footer/>
+      <AboutUs/>
     </div>
   );
 }

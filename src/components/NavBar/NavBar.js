@@ -11,15 +11,16 @@ import {
 } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
+import logo from '../../assets/logo-estafa-libre.png';
 
 const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-        <Navbar.Brand className="navbar-logo" href="#home">
-          Logo Estafa Mlibre
-        </Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
+          </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="button-colapse"
@@ -39,7 +40,7 @@ const NavBar = () => {
                   />
                 </button>
               </div>
-              <div className='buttons-container'>
+              <div className="buttons-container">
                 <div>
                   <Dropdown>
                     <DropdownToggle className="dropdown-icon">
@@ -48,7 +49,7 @@ const NavBar = () => {
                         className="filter-icon"
                       />
                     </DropdownToggle>
-                    <Dropdown.Menu className="dropdown-items">
+                    <Dropdown.Menu>
                       <DropdownItem>Action</DropdownItem>
                       <DropdownItem>Action 2</DropdownItem>
                     </Dropdown.Menu>
@@ -60,7 +61,7 @@ const NavBar = () => {
                     <DropdownToggle className="dropdown-icon-user">
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </DropdownToggle>
-                    <Dropdown.Menu className="dropdown-items">
+                    <Dropdown.Menu>
                       <DropdownItem>Perfil</DropdownItem>
                       <DropdownItem>Cerrar Sesión</DropdownItem>
                     </Dropdown.Menu>

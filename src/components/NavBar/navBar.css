@@ -25,7 +25,8 @@ background-color: red;
 
 .navbar-logo {
   color: white;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  width: 110px;
 }
 
 .nav-class{

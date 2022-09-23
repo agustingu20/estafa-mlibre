@@ -8,10 +8,8 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>Bienvenidos a Estafa Mlibre</h1>
-      <h2>Clon E-commerce de ML.</h2>
-      <Footer/>
       <AboutUs/>
+      <Footer/>
 
     </div>
   );

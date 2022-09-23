@@ -5,8 +5,12 @@ import classNames from 'classnames';
 import LogoSL from '../../assets/logo-estafa-libre.png';
 
 const Footer = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <footer className='footer-wrapper'>
@@ -22,16 +26,29 @@ const Footer = () => {
             </p>
           </div>
           <form className='formulario' onSubmit={handleSubmit(onSubmit)}>
-            <input type='email' className={classNames({
-              error: errors.suscribir,
-              '': !errors.suscribir,
-            })} placeholder='ejemplo@gmail.com' {...register('suscribir', { required: true })}/>
+            <input
+              type='email'
+              className={classNames({
+                error: errors.suscribir,
+                '': !errors.suscribir,
+              })}
+              placeholder='ejemplo@gmail.com'
+              {...register(
+                'suscribir',
+                {
+                  required: true,
+                },
+                {
+                  maxLength: 254,
+                },
+              )}
+            />
             <button>Suscribir</button>
           </form>
         </div>
         <div className='seccion-primaria'>
           <div className='columna columna-uno'>
-            <img className='logo' src={LogoSL} alt="Logo de Estafa ML" />
+            <img className='logo' src={LogoSL} alt='Logo de Estafa ML' />
             <div className='texto'>
               Para estafar se necesitan dos, uno que mienta y otro que crea.
             </div>

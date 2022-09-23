@@ -3,7 +3,13 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
+}
+
+.about-header{
+    margin-top: 3rem;
 }
 
 .wrapper-about .about-header .descripcion h2 {
@@ -15,18 +21,31 @@
 .wrapper-about .about-header .paquete {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper-about .about-header .paquete img {
   height: 100%;
-  width: 100%;
-  object-fit: cover;
+  width: min(100%, 400px);
+  object-fit: contain;
+  margin: 0 auto;
+
+}
+
+.wrapper-about .wrapper-caracteristicas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .wrapper-about .wrapper-caracteristicas .caracteristica {
-  text-align: center;
   text-transform: uppercase;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper-about .wrapper-caracteristicas .caracteristica:nth-child(even) {
@@ -41,6 +60,7 @@
 
 .wrapper-about .wrapper-caracteristicas .caracteristica .icon {
   font-size: 2rem;
+  margin-bottom: .5rem;
 }
 
 .wrapper-about .wrapper-caracteristicas .caracteristica p {
@@ -48,16 +68,18 @@
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
+  width: min(100%, 400px);
+  text-align: center;
 }
 
 .wrapper-datos {
   position: relative;
+  width: 100%;
 }
 
 .wrapper-datos .data {
   width: 100%;
   height: 200px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,19 +88,19 @@
 }
 
 .wrapper-datos .data:nth-child(1) {
-  background-image: url('https://images.pexels.com/photos/6214480/pexels-photo-6214480.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('../../assets/banner-productos.webp');
   background-size: cover;
   background-position: center center;
 }
 
 .wrapper-datos .data:nth-child(2) {
-  background-image: url('https://images.pexels.com/photos/2701434/pexels-photo-2701434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('../../assets/banner-stores.webp');
   background-size: cover;
   background-position: center center;
 }
 
 .wrapper-datos .data:nth-child(3) {
-  background-image: url('https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('../../assets/banner-ventas.webp');
   background-size: cover;
   background-position: center center;
 }
@@ -115,6 +137,9 @@
   height: 200px;
   border: 1px solid rgb(30, 30, 30);
 }
+.wrapper-marcas{
+    margin-bottom: 2rem;
+}
 
 .wrapper-marcas h2 {
   text-align: center;
@@ -138,3 +163,34 @@
     margin-top: 1rem;
 }
 
+@media screen and (min-width:760px) {
+    .about-header{
+        display: flex;
+    }
+
+    .wrapper-about .wrapper-caracteristicas{
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .wrapper-caracteristicas .caracteristica{
+        flex: 1;
+    }
+    
+    .wrapper-about .wrapper-caracteristicas .caracteristica:nth-child(even) {
+        border-top: none;
+        border-bottom: none;
+        border-left: 1px solid rgb(56, 56, 56);
+        border-right: 1px solid rgb(56, 56, 56);
+        padding: 2rem;
+      }
+}
+
+@media screen and (min-width:1200px){
+       .about-header,
+       .wrapper-about .wrapper-caracteristicas,
+       .wrapper-datos,
+       .wrapper-marcas{
+        width: 70%;
+    }
+}

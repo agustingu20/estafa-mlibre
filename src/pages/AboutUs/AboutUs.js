@@ -1,8 +1,5 @@
 import './aboutUs.css';
 import Carousel from 'react-bootstrap/Carousel';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Box from '../../assets/box.png';
 import Ipone from '../../assets/ipone.png';
 import Xiaom from '../../assets/xiaom.png';
@@ -17,7 +14,7 @@ const AboutUs = () => {
           <p>
             Somo la versión malvada de ML, no ofrecemos descuentos (paguen lo
             que corresponde, ratas) y hacemos los envíos cuando se pueda, vaya
-            uno a saber cuando llega.
+            uno a saber cuando llega. Activos desde 2022.
           </p>
         </div>
         <div className='paquete'>
@@ -96,17 +93,17 @@ const AboutUs = () => {
           </Carousel.Item>
           <Carousel.Item>
             <Carousel.Caption>
-              <h3>Third slide label</h3>
+              <h3>Carlito Balá</h3>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              ¡¡¿Qué gusto tiene la sal?!! Salada!!!
               </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <Carousel.Caption>
-              <h3>Third slide label</h3>
+              <h3>Mambru</h3>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                se fue a la guerra, ay que dolor, que dolor que pena.
               </p>
             </Carousel.Caption>
           </Carousel.Item>

@@ -1,0 +1,127 @@
+.wrapper-about {
+  color: rgb(231, 231, 231);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wrapper-about .about-header .descripcion h2 {
+  color: var(--clr-rojo);
+  font-size: 2.9rem;
+  font-weight: 700;
+}
+
+.wrapper-about .about-header .paquete {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper-about .about-header .paquete img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper-about .wrapper-caracteristicas .caracteristica{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem 0;
+}
+
+.wrapper-about .wrapper-caracteristicas .caracteristica:nth-child(even){
+    border-top: 1px solid rgb(56, 56, 56);
+    border-bottom: 1px solid rgb(56, 56, 56);
+}
+
+.wrapper-about .wrapper-caracteristicas .caracteristica .icon,
+.wrapper-about .wrapper-caracteristicas .caracteristica h3{
+    color: var(--clr-rojo);
+}
+
+.wrapper-about .wrapper-caracteristicas .caracteristica .icon{
+    font-size: 2rem;
+}
+
+.wrapper-about .wrapper-caracteristicas .caracteristica p{
+    font-size: .9rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-datos{
+    position: relative;
+}
+
+.wrapper-datos .data{
+    width: 100%;
+    height: 200px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.wrapper-datos .data:nth-child(1){
+    background-image: url('https://images.pexels.com/photos/6214480/pexels-photo-6214480.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center center;
+}
+
+.wrapper-datos .data:nth-child(2){
+    background-image: url('https://images.pexels.com/photos/2701434/pexels-photo-2701434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center center;
+}
+
+.wrapper-datos .data:nth-child(3){
+    background-image: url('https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center center;
+}
+
+.wrapper-datos .data .icon{
+    font-size: 2rem;
+    z-index: 1000;
+
+}
+
+.wrapper-datos .data p{
+    max-width: 60%;
+    text-align: center;
+    font-weight:600;
+    font-size: 1.1rem;
+    z-index: 1000;
+}
+
+.wrapper-datos .cover{
+    position: absolute;
+    height: 100%;
+    inset: 0;
+    background-color: var(--clr-rojo);
+    width: 70%;
+    margin: 0 auto;
+    mix-blend-mode: darken;
+}
+
+.carousel-item{
+    height: 200px;
+}
+
+.wrapper-marcas h2{
+    text-align: center;
+    color: var(--clr-rojo);
+}
+
+.wrapper-marcas .marca{
+    width: 100%;
+}
+
+.wrapper-marcas .marca img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

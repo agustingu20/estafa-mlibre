@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,8 +12,25 @@ import {
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import logo from '../../assets/logo-estafa-libre.png';
+import useFetch from '../../hooks/useFetch';
 
 const NavBar = () => {
+  const [searchValue, setSearchValue] = useState('');
+  const [query, setQuery] = useState('Vehiculos');
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const searchOnClick = () => {
+    setQuery(searchValue);
+  };
+
+  const searchResults = useFetch(
+    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
+  );
+  console.log(searchResults.data?.results);
+
   return (
     <>
       <Navbar bg="dark" expand="lg">
@@ -32,11 +49,13 @@ const NavBar = () => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
+                  onChange={handleChange}
                 />
                 <button className="search-button">
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
                     className="search-icon"
+                    onClick={searchOnClick}
                   />
                 </button>
               </div>

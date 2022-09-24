@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useDispatch } from 'react-redux';
 import {
   faMagnifyingGlass,
   faBarsStaggered,
@@ -11,25 +12,30 @@ import {
 } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
-import logo from '../../assets/logo-estafa-libre.png';
 import useFetch from '../../hooks/useFetch';
+import logo from '../../assets/logo-estafa-libre.png';
+import { setSearchResults } from '../../app/searchSlice';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState('Vehiculos');
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
   };
 
+  const searchResults = useFetch(
+    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
+  );
+
   const searchOnClick = () => {
     setQuery(searchValue);
   };
 
-  const searchResults = useFetch(
-    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
-  );
-  console.log(searchResults.data?.results);
+  useEffect(() => {
+    dispatch(setSearchResults(searchResults.data?.results));
+  }, [searchResults]);
 
   return (
     <>

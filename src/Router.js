@@ -1,5 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import SearchResultsCards from './components/SearchResultsCards/SearchResultsCards';
 import AboutUs from './pages/AboutUs/AboutUs';
 
 const Router = createBrowserRouter([
@@ -10,7 +12,12 @@ const Router = createBrowserRouter([
   },
   {
     path: '/about',
-    element: <AboutUs/>,
+    element: <AboutUs />,
+    errorElement: 'pagina no encontrada',
+  },
+  {
+    path: '/search',
+    element: <SearchResultsCards />,
     errorElement: 'pagina no encontrada',
   },
 ]);

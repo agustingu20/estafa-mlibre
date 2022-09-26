@@ -10,6 +10,7 @@ import {
 import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setSearchResults } from '../../app/searchSlice';
@@ -40,7 +41,7 @@ const NavBar = () => {
       <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
-            <img src={logo} alt='logo_estafa_mlibre' className="navbar-logo" />
+            <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
@@ -56,11 +57,13 @@ const NavBar = () => {
                   onChange={handleChange}
                 />
                 <button className="search-button">
-                  <FontAwesomeIcon
-                    icon={faMagnifyingGlass}
-                    className="search-icon"
-                    onClick={searchOnClick}
-                  />
+                  {/* <Link to={'/search'}> */}
+                    <FontAwesomeIcon
+                      icon={faMagnifyingGlass}
+                      className="search-icon"
+                      onClick={searchOnClick}
+                    />
+                  {/* </Link> */}
                 </button>
               </div>
               <div className="buttons-container">

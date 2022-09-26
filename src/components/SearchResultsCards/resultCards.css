@@ -1,0 +1,11 @@
+.results-card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.result-card{
+    width: 18rem;
+    margin: 0 1rem 2rem 1rem;
+}

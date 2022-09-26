@@ -10,8 +10,6 @@ import {
 import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
-import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import useFetch from '../../hooks/useFetch';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setSearchResults } from '../../app/searchSlice';
@@ -42,7 +40,7 @@ const NavBar = () => {
       <Navbar bg="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
-            <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
+            <img src={logo} alt='logo_estafa_mlibre' className="navbar-logo" />
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
@@ -68,27 +66,27 @@ const NavBar = () => {
               <div className="buttons-container">
                 <div>
                   <Dropdown>
-                    <DropdownToggle className="dropdown-icon">
+                    <Dropdown.Toggle className="dropdown-icon">
                       <FontAwesomeIcon
                         icon={faBarsStaggered}
                         className="filter-icon"
                       />
-                    </DropdownToggle>
+                    </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Action 2</DropdownItem>
+                      <Dropdown.Item>Action</Dropdown.Item>
+                      <Dropdown.Item>Action 2</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
                 <div className="d-flex justify-content-center">
                   <p className="user-text">User</p>
                   <Dropdown>
-                    <DropdownToggle className="dropdown-icon-user">
+                    <Dropdown.Toggle className="dropdown-icon-user">
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
-                    </DropdownToggle>
+                    </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <DropdownItem>Perfil</DropdownItem>
-                      <DropdownItem>Cerrar Sesión</DropdownItem>
+                      <Dropdown.Item>Perfil</Dropdown.Item>
+                      <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

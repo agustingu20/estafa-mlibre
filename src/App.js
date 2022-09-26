@@ -1,16 +1,18 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  RouterProvider,
+} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/footer/Footer';
-import AboutUs from './pages/AboutUs/AboutUs';
+import Router from './Router';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <AboutUs/>
+      <RouterProvider router={Router}/>
       <Footer/>
-
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import carritos from '../../assets/carritos.jpg';
+import './error404.css';
 
 const error404 = () => {
   return (
@@ -17,7 +18,7 @@ const error404 = () => {
         inténtalo nuevamente mas tarde si tenes ganas.</h5>
       </div>
       <div className="d-flex justify-content-center mt-4">
-        <Link className="btn mar text-danger border-0 w-50 " to={'/'}>
+        <Link className="btn home border-0  " to={'/'}>
           <FontAwesomeIcon icon={faHome} className="fa-3x"></FontAwesomeIcon>
         </Link>
       </div>

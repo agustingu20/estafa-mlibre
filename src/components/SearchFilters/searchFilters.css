@@ -1,0 +1,8 @@
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li:last-child > div:last-child > p:last-child {
+    display: none;
+}

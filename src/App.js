@@ -1,18 +1,22 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-  RouterProvider,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/footer/Footer';
-import Router from './Router';
+import AboutUs from './pages/AboutUs/AboutUs';
+import SearchResultsCards from './components/SearchResultsCards/SearchResultsCards';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <RouterProvider router={Router}/>
-      <Footer/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/search' element={<SearchResultsCards />} />
+          <Route path='/about' element={<AboutUs />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

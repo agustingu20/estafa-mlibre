@@ -2,6 +2,7 @@ import './home.css';
 import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
 import Mascotas from '../../assets/mascotas.webp';
+import About from '../../assets/about-landing.webp';
 
 const Home = () => {
   return (
@@ -46,15 +47,15 @@ const Home = () => {
         </div>
       </section>
       <div className='pequenio-aboutUs'>
-        <img src='' alt='' />
+        <img src={About} alt='foto ilustratova seccion Sobre nosotros' />
         <div className='text-wrapper'>
-          <h2>Titilo</h2>
-          <div className='info'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit,
-            commodi labore? Molestias, minus aperiam? Ipsam vero fugiat,
-            assumenda obcaecati soluta voluptatibus laborum, eius quis quibusdam
-            accusantium atque mollitia debitis impedit?
-          </div>
+          <h2>Sobre nosotros</h2>
+          <p className='info'>
+            Somos Estafa MLibre, ya tenemos una sección que habla sobre nosotros en esta página así
+            no que no se que escribir aquí para rellenar pero no puedo usar Lorem. Bueno, ya que
+            importa Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ducimus
+            rem minima similique fugiat aperiam.
+          </p>
         </div>
       </div>
     </section>

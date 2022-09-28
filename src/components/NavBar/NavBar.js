@@ -57,13 +57,13 @@ const NavBar = () => {
                   onChange={handleChange}
                 />
                 <button className="search-button">
-                  {/* <Link to={'/search'}> */}
+                  <Link to={'/search'}>
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"
                       onClick={searchOnClick}
                     />
-                  {/* </Link> */}
+                  </Link>
                 </button>
               </div>
               <div className="buttons-container">

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import SearchFilters from '../SearchFilters/SearchFilters';
 import './resultCards.css';
 
 const SearchResultsCards = () => {
   const { searchResult } = useSelector((state) => state);
-  console.log(searchResult);
 
   return (
     <>
       <div className="results-count">
-        {searchResult.results.filters.map((filter) => `${filter.name}>`)}
+        <SearchFilters />
       </div>
       <div className="d-flex justify-content-center mb-5">
         <div className="results-card-container">

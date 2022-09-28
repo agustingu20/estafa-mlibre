@@ -33,7 +33,7 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    dispatch(setSearchResults(searchResults.data?.results));
+    dispatch(setSearchResults(searchResults.data));
   }, [searchResults]);
 
   return (

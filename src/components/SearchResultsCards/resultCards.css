@@ -13,5 +13,12 @@
 .img-card{
     width: 120px;
     margin: 1rem auto 0 1rem;
+}
 
+.results-count{
+    margin: 2rem 0 1rem 12.5rem;
+}
+
+.results-count:last-child{
+    display: none;
 }

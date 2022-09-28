@@ -1,8 +1,9 @@
+/* istanbul ignore file */
 import { createSlice } from '@reduxjs/toolkit';
 
 const searchSlice = createSlice({
   name: 'searchResults',
-  initialState: {},
+  initialState: { results: [] },
   reducers: {
     setSearchResults(state, action) {
       state.results = action.payload;

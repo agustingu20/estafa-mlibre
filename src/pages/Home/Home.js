@@ -3,8 +3,11 @@ import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
 import Mascotas from '../../assets/mascotas.webp';
 import About from '../../assets/about-landing.webp';
+import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
+  const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount');
+  const conDescuento = data?.data?.results;
   return (
     <section className='landing-wrapper backgroud-general'>
       <div className='elige-categoria'>
@@ -43,7 +46,9 @@ const Home = () => {
       <section className='destacados'>
         <h2>Te puede interesar...</h2>
         <div className='grupo-destacados'>
-          <div className='producto'>producto</div>
+          {conDescuento?.slice(1, 12)?.map((product) => (
+            <p key={product?.id} className='producto'>{product?.title}</p>
+          ))}
         </div>
       </section>
       <div className='pequenio-aboutUs'>

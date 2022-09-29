@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -29,7 +29,7 @@ const SearchResultsCards = () => {
                 <h3 className="mt-5 me-3">$ {Math.trunc(result.price)}</h3>
               </div>
               <Card.Body>
-                <Link style={{ textDecoration: 'none' }} onClick={() => dispatch(setProductId(result.id)) }>
+                <Link to='/items' style={{ textDecoration: 'none' }} onClick={() => dispatch(setProductId(result.id)) }>
                   <Card.Title name={`${result.id}`}>{result.title}</Card.Title>
                 </Link>
                 {result.shipping.free_shipping === true && (

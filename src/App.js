@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/footer/Footer';
 import AboutUs from './pages/AboutUs/AboutUs';
 import SearchResultsCards from './components/SearchResultsCards/SearchResultsCards';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/search' element={<SearchResultsCards />} />
           <Route path='/about' element={<AboutUs />} />
+          <Route path='/items' element={<ProductDetail />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

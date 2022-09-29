@@ -27,9 +27,12 @@
 .elige-categoria .grupo-populares .categoria{
     text-decoration: none;
     width: 100%;
-    height: 300px;
     text-align: right;
     position: relative;
+}
+
+.grupo-populares .categoria > div{
+    height: 250px;
 }
 
 .grupo-populares .categoria img{
@@ -61,6 +64,12 @@
     padding: 1rem;
 }
 
+.destacados h2{
+    color: #fff;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
 .pequenio-aboutUs{
     width: 100%;
     padding: 1rem;
@@ -89,4 +98,37 @@
 
 .pequenio-aboutUs .text-wrapper p{
     font-weight: 500;
+}
+
+@media screen and (min-width: 640px) {
+    .grupo-populares{
+        display: flex;
+    }
+
+    .pequenio-aboutUs {
+        display: flex;
+    }
+
+    .pequenio-aboutUs .text-wrapper{
+        position: relative;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .elige-categoria,
+    .destacados,
+    .pequenio-aboutUs {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 1400px){
+    .elige-categoria,
+    .destacados,
+    .pequenio-aboutUs {
+        max-width: 70%;
+    }
 }

@@ -7,7 +7,16 @@ import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
   const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount');
+  const categorias = useFetch('https://api.mercadolibre.com/sites/MLA/categories');
+
+  const hogar = useFetch('https://api.mercadolibre.com/categories/MLA1574');
+
+  const computacion = useFetch('https://api.mercadolibre.com/categories/MLA1648');
+
+  const mascotas = useFetch('https://api.mercadolibre.com/categories/MLA1071');
+
   const conDescuento = data?.data?.results;
+  console.log(categorias);
   return (
     <section className='landing-wrapper backgroud-general'>
       <div className='elige-categoria'>
@@ -18,8 +27,8 @@ const Home = () => {
             <div>
               <img src={Hogar} alt='categoria hogar' />
               <div className='nombre-categoria'>
-                <h2>Hogar</h2>
-                <h5>115 productos</h5>
+                <h2>{hogar?.data?.name}</h2>
+                <h5>{hogar?.data?.total_items_in_this_category} Productos</h5>
               </div>
             </div>
           </a>
@@ -27,8 +36,8 @@ const Home = () => {
             <div>
               <img src={Tecnologia} alt='categoria Tecnologia' />
               <div className='nombre-categoria'>
-                <h2>Tecnología</h2>
-                <h5>115 productos</h5>
+                <h2>{computacion?.data?.name}</h2>
+                <h5>{computacion?.data?.total_items_in_this_category} productos</h5>
               </div>
             </div>
           </a>
@@ -36,8 +45,8 @@ const Home = () => {
             <div>
               <img src={Mascotas} alt='categoria Mascota' />
               <div className='nombre-categoria'>
-                <h2>Mascotas</h2>
-                <h5>115 productos</h5>
+                <h2>{mascotas?.data?.name}</h2>
+                <h5>{mascotas?.data?.total_items_in_this_category} productos</h5>
               </div>
             </div>
           </a>

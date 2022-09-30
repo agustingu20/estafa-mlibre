@@ -70,6 +70,11 @@
     font-size: 1rem;
 }
 
+.destacados .grupo-destacados{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .pequenio-aboutUs{
     width: 100%;
     padding: 1rem;

@@ -1,5 +1,6 @@
 import './home.css';
 import { Link } from 'react-router-dom';
+import ProductCard from '../../components/ProductCard/ProductCard.jsx';
 import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
 import Mascotas from '../../assets/mascotas.webp';
@@ -8,7 +9,6 @@ import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
   const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount');
-  const categorias = useFetch('https://api.mercadolibre.com/sites/MLA/categories');
 
   const hogar = useFetch('https://api.mercadolibre.com/categories/MLA1574');
 
@@ -17,7 +17,7 @@ const Home = () => {
   const mascotas = useFetch('https://api.mercadolibre.com/categories/MLA1071');
 
   const conDescuento = data?.data?.results;
-  console.log(categorias);
+
   return (
     <section className='landing-wrapper backgroud-general'>
       <div className='elige-categoria'>
@@ -55,9 +55,9 @@ const Home = () => {
       </div>
       <section className='destacados'>
         <h2>Te puede interesar...</h2>
-        <div className='grupo-destacados'>
-          {conDescuento?.slice(1, 12)?.map((product) => (
-            <p key={product?.id} className='producto'>{product?.title}</p>
+        <div className='grupo-destacados '>
+          {conDescuento?.slice(0, 12)?.map((product) => (
+            <ProductCard key={product?.id} product={product}/>
           ))}
         </div>
       </section>

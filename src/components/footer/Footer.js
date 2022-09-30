@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import './footerStyle.css';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import LogoSL from '../../assets/logo-estafa-libre.png';
 
 const Footer = () => {
@@ -53,34 +54,34 @@ const Footer = () => {
               Para estafar se necesitan dos, uno que mienta y otro que crea.
             </div>
             <div className='redes'>
-              <a href='*'>
+              <Link to='*'>
                 <i className='fa-brands fa-instagram'></i>
-              </a>
-              <a href='*'>
+              </Link>
+              <Link to='*'>
                 <i className='fa-brands fa-facebook-f'></i>
-              </a>
-              <a href='*'>
+              </Link>
+              <Link to='*'>
                 <i className='fa-brands fa-twitter'></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className='columna columna-dos'>
             <p className='titulo-columna'>INFORMACIÓN</p>
-            <a href='*'>Sobre Estafa MLibre</a>
-            <a href='*'>FAQ</a>
-            <a href='*'>Contactanos</a>
+            <Link to='about'>Sobre Estafa MLibre</Link>
+            <Link to='*'>FAQ</Link>
+            <Link to='*'>Contactanos</Link>
           </div>
           <div className='columna columna-tres'>
             <p className='titulo-columna'>LINKS RÁPIDOS</p>
-            <a href='*'>Wishlist</a>
-            <a href='*'>Checkout</a>
-            <a href='*'>Carrito</a>
+            <Link to='*'>Wishlist</Link>
+            <Link to='*'>Checkout</Link>
+            <Link to='*'>Carrito</Link>
           </div>
           <div className='columna columna-cuatro'>
             <p className='titulo-columna'>CONTACTO</p>
-            <a href='*'>2153 Av. Libertador, Tucuman, 4000</a>
-            <a href='*'>(0381) 555-4444</a>
-            <a href='*'>estafa-mlibre@gmail.com</a>
+            <p>2153 Av. Libertador, Tucuman, 4000</p>
+            <p>(0381) 555-4444</p>
+            <p>estafa-mlibre@gmail.com</p>
           </div>
         </div>
         <div className='separador'></div>

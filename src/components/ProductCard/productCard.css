@@ -1,0 +1,34 @@
+.cardProduct {
+    font-size: 23px;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 18rem;
+    margin: 0 1rem 2rem 1rem;
+}
+.img {
+    object-fit: cover;
+    height: 100px;
+    width: 120px;
+    margin: 1rem auto 0 1rem;
+}
+.textDescription {
+    color: #EF3636;
+    height: 50px;
+
+}
+.textPrice {
+    color: #EF3636;
+}
+.buttonProduc {
+    background-color: #FFFFFF;
+    color: black;
+    border: 1px solid #000000;
+
+
+}
+.buttonProduc:hover {
+    background-color: #EF3636 !important;
+}

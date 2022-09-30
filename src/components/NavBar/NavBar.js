@@ -17,20 +17,25 @@ import { setSearchResults } from '../../app/searchSlice';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState('Vehiculos');
+  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
 
+  const searchOnClick = () => {
+    setQuery(searchValue);
+  };
   const handleChange = (e) => {
-    setSearchValue(e.target.value);
+    console.log(e.key);
+    if (e.key === 'Enter') {
+      searchOnClick();
+    } else {
+      setSearchValue(searchValue + e.key);
+    }
   };
 
   const searchResults = useFetch(
     `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
   );
-
-  const searchOnClick = () => {
-    setQuery(searchValue);
-  };
+  console.log(`prueba = ${searchValue}`);
 
   useEffect(() => {
     dispatch(setSearchResults(searchResults.data));
@@ -54,17 +59,17 @@ const NavBar = () => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
-                  onChange={handleChange}
+                    onKeyPress={Event.key === 'Enter' ? <Link to={'/search'} /> : handleChange}
                 />
+              <Link to={'/search'}>
                 <button className="search-button">
-                  <Link to={'/search'}>
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"
                       onClick={searchOnClick}
                     />
-                  </Link>
                 </button>
+                  </Link>
               </div>
               <div className="buttons-container">
                 <div>

@@ -41,23 +41,23 @@ const ProductDetail = () => {
           />
         </div>
         <div className="description-wrapper">
-          <div className='text-center'>
-            <h1 className='mb-3'>{searchProductById.data?.title}</h1>
+          <div className="text-center">
+            <h1 className="mb-3">{searchProductById.data?.title}</h1>
             {searchProductById.data?.shipping.free_shipping === true && (
               <p className="text-success fw-bold">
                 Envío Gratis <img src={freeShipping} alt="free_shipping" />
               </p>
             )}
-            <h3 className='mb-4'>$ {Math.trunc(searchProductById.data?.price)}</h3>
+            <h3 className="mb-4">
+              $ {Math.trunc(searchProductById.data?.price)}
+            </h3>
           </div>
           <div className="d-flex flex-wrap justify-content-center">
-            <div>
-              <Button variant="success" className="m-2 w-100">
-                Comprar
-              </Button>
-              <Button variant="outline-warning" className="m-2 w-100">
+            <div className='buttons-wrapper'>
+              <button className="button-buy m-2">Comprar</button>
+              <button className="shop-cart m-2">
                 Agregar Carrito
-              </Button>
+              </button>
             </div>
           </div>
         </div>

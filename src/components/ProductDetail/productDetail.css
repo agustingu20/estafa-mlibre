@@ -29,3 +29,38 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.buttons-wrapper{
+    width: 230px;
+}
+
+.button-buy{
+    background-color: #EF3636;
+    color: white;
+    font-size: 18px;
+    border: #EF3636 solid 1px;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+}
+
+.button-buy:hover{
+    background-color: #d32727;
+    border: #d32727 solid 1px;
+}
+
+.shop-cart{
+    background-color: transparent;
+    color: #EF3636;
+    font-size: 18px;
+    border: #EF3636 solid 1px;
+    border-radius: 4px;
+    width: 100%;
+    height: 35px;
+}
+
+.shop-cart:hover{
+    background-color: transparent;
+    font-weight: bold;
+    border: #d32727 solid 1px;
+}

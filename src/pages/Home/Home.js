@@ -1,4 +1,5 @@
 import './home.css';
+import { Link } from 'react-router-dom';
 import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
 import Mascotas from '../../assets/mascotas.webp';
@@ -23,7 +24,7 @@ const Home = () => {
         <h2 className='titulo-grupo-catgoria'>Compra por categoria</h2>
         <h4>Las mas populares son</h4>
         <div className='grupo-populares'>
-          <a href='/' className='categoria hogar'>
+          <Link to='/' className='categoria hogar'>
             <div>
               <img src={Hogar} alt='categoria hogar' />
               <div className='nombre-categoria'>
@@ -31,8 +32,8 @@ const Home = () => {
                 <h5>{hogar?.data?.total_items_in_this_category} Productos</h5>
               </div>
             </div>
-          </a>
-          <a href='/' className='categoria tecnologia'>
+          </Link>
+          <Link to='/' className='categoria tecnologia'>
             <div>
               <img src={Tecnologia} alt='categoria Tecnologia' />
               <div className='nombre-categoria'>
@@ -40,8 +41,8 @@ const Home = () => {
                 <h5>{computacion?.data?.total_items_in_this_category} productos</h5>
               </div>
             </div>
-          </a>
-          <a href='/' className='categoria mascotas'>
+          </Link>
+          <Link to='/' className='categoria mascotas'>
             <div>
               <img src={Mascotas} alt='categoria Mascota' />
               <div className='nombre-categoria'>
@@ -49,7 +50,7 @@ const Home = () => {
                 <h5>{mascotas?.data?.total_items_in_this_category} productos</h5>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <section className='destacados'>

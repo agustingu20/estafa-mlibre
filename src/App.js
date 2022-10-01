@@ -6,6 +6,7 @@ import Footer from './components/footer/Footer';
 import Home from './pages/Home/Home';
 import AboutUs from './pages/AboutUs/AboutUs';
 import SearchResultsCards from './components/SearchResultsCards/SearchResultsCards';
+import PerfilUsuario from './pages/PerfilUsuario/PerfilUsuario';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/search' element={<SearchResultsCards />} />
           <Route path='/about' element={<AboutUs />} />
+          <Route path='/user' element={<PerfilUsuario />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -11,7 +11,6 @@ import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setqueryResults } from '../../app/querySlice';
 

@@ -24,13 +24,14 @@ const NavBar = () => {
     dispatch(setqueryResults(searchValue));
   };
   const handleChange = (e) => {
+    const { value } = e.target;
     if (e.key === 'Enter' && location.pathname !== '/search') {
       searchOnClick();
       navigate('/search');
     } else if (e.key === 'Enter') {
       searchOnClick();
     } else {
-      setSearchValue(searchValue + e.key);
+      setSearchValue(value + e.key);
     }
   };
 
@@ -38,9 +39,9 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Link to={'/'}>
             <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="button-colapse"
@@ -55,7 +56,7 @@ const NavBar = () => {
                   onKeyPress={handleChange}
                 />
                 <Link to={'/search'}>
-                  <button className="search-button">
+                  <button className="search-button" data-testid="searchButton">
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"

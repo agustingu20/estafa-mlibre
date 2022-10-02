@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const querySlice = createSlice({
   name: 'queryResults',
-  initialState: { results: [] },
+  initialState: { results: 'Vehiculos' },
   reducers: {
     setqueryResults(state, action) {
       state.results = action.payload;

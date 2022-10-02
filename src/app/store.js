@@ -1,12 +1,14 @@
 /* istanbul ignore file */
 import { configureStore } from '@reduxjs/toolkit';
+import productIdSlice from './productIdSlice';
 import querySlice from './querySlice';
 import searchSlice from './searchSlice';
 
 const store = configureStore({
   reducer: {
-    queryResult: querySlice,
+    productId: productIdSlice,
     searchResult: searchSlice,
+    queryResult: querySlice,
   },
   devTools: true,
 });

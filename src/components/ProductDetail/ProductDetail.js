@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import './productDetail.css';
 import freeShipping from '../../assets/shipping.png';
 
 const ProductDetail = () => {
-  const { productId } = useSelector((state) => state);
+  const { itemId } = useParams();
+
   const searchProductById = useFetch(
-    `https://api.mercadolibre.com/items/${productId.id}`,
+    `https://api.mercadolibre.com/items/${itemId}`,
   );
 
   const [mainImage, setMainImage] = useState('');
@@ -21,7 +22,7 @@ const ProductDetail = () => {
       <div className="component-wrapper">
         <div className="image-wrapper">
           <div className="d-flex flex-column mt-4 me-2" data-testid='product-detail'>
-            {searchProductById.data?.pictures.map((picture) => (
+            {searchProductById.data?.pictures?.map((picture) => (
               <img
                 key={picture.id}
                 className="secondary-image"

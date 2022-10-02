@@ -8,18 +8,20 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import SearchResultsCards from './components/SearchResultsCards/SearchResultsCards';
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import PerfilUsuario from './pages/PerfilUsuario/PerfilUsuario';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <BrowserRouter>
+        <ScrollToTop></ScrollToTop>
         <NavBar />
         <Routes>
-          <Route path='/' index element={<Home />} />
-          <Route path='/search' element={<SearchResultsCards />} />
-          <Route path='/about' element={<AboutUs />} />
-          <Route path='/items' element={<ProductDetail />}/>
-          <Route path='/user' element={<PerfilUsuario />} />
+          <Route path="/" index element={<Home />} />
+          <Route path="/search" element={<SearchResultsCards />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/items" element={<ProductDetail />} />
+          <Route path="/user" element={<PerfilUsuario />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -39,9 +39,9 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">
+          <Link to={'/'}>
             <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="button-colapse"
@@ -56,7 +56,7 @@ const NavBar = () => {
                   onKeyPress={handleChange}
                 />
                 <Link to={'/search'}>
-                  <button className="search-button" data-testid='searchButton'>
+                  <button className="search-button" data-testid="searchButton">
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"

@@ -8,6 +8,7 @@ import './resultCards.css';
 
 const SearchResultsCards = () => {
   const { queryResult, searchResult } = useSelector((state) => state);
+  console.log(queryResult);
   const dispatch = useDispatch();
   const searchResults = useFetch(
     `https://api.mercadolibre.com/sites/MLA/search?q=${queryResult.results}&limit=12`,

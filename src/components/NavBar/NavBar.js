@@ -24,13 +24,14 @@ const NavBar = () => {
     dispatch(setqueryResults(searchValue));
   };
   const handleChange = (e) => {
+    const { value } = e.target;
     if (e.key === 'Enter' && location.pathname !== '/search') {
       searchOnClick();
       navigate('/search');
     } else if (e.key === 'Enter') {
       searchOnClick();
     } else {
-      setSearchValue(searchValue + e.key);
+      setSearchValue(value + e.key);
     }
   };
 
@@ -38,7 +39,7 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
           </Navbar.Brand>
           <Navbar.Toggle

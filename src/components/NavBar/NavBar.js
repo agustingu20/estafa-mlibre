@@ -21,12 +21,15 @@ const NavBar = () => {
   const location = useLocation();
 
   const searchOnClick = () => {
-    dispatch(setqueryResults(searchValue));
+    if (location.pathname !== '/search') {
+      navigate('/search');
+    } else {
+      dispatch(setqueryResults(searchValue));
+    }
   };
   const handleChange = (e) => {
     const { value } = e.target;
     if (e.key === 'Enter' && location.pathname !== '/search') {
-      searchOnClick();
       navigate('/search');
     } else if (e.key === 'Enter') {
       searchOnClick();
@@ -55,7 +58,6 @@ const NavBar = () => {
                   placeholder="Buscar"
                   onKeyPress={handleChange}
                 />
-                <Link to={'/search'}>
                   <button className="search-button" data-testid="searchButton">
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
@@ -63,7 +65,6 @@ const NavBar = () => {
                       onClick={searchOnClick}
                     />
                   </button>
-                </Link>
               </div>
               <div className="buttons-container">
                 <div>

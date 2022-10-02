@@ -1,13 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setProductId } from '../../app/productIdSlice';
 import './productCard.css';
 
 function ProductCard({ product }) {
-  const dispatch = useDispatch();
+  const itemId = product.id;
 
   return (
     <Card className="text-center cardProduct">
@@ -17,11 +15,10 @@ function ProductCard({ product }) {
         <Card.Text className="textPrice">
           $ {Math.trunc(product.price).toLocaleString('es-ES')}
         </Card.Text>
-        <Link to='/items'>
+        <Link to={`/items/${itemId}`}>
           <Button
             className="buttonProduc"
             variant="primary"
-            onClick={() => dispatch(setProductId(product.id))}
           >
             Ver producto
           </Button>

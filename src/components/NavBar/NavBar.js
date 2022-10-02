@@ -24,6 +24,11 @@ const NavBar = () => {
   const searchOnClick = () => {
     if (location.pathname !== '/search') {
       navigate('/search');
+      if (searchValue === '') {
+        dispatch(setqueryResults('vehiculos'));
+      } else {
+        dispatch(setqueryResults(searchValue));
+      }
     } else {
       dispatch(setqueryResults(searchValue));
       dispatch(setOffset(0));
@@ -33,6 +38,7 @@ const NavBar = () => {
     const { value } = e.target;
     if (e.key === 'Enter' && location.pathname !== '/search') {
       navigate('/search');
+      searchOnClick();
     } else if (e.key === 'Enter') {
       searchOnClick();
     } else {

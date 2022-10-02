@@ -12,6 +12,10 @@ const ProductDetail = () => {
   );
   console.log('producto', searchProductById);
 
+  if (!searchProductById.data) {
+    return null;
+  }
+
   return (
     <>
       <div className="component-wrapper">

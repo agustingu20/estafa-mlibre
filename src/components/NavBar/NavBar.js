@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -10,36 +10,29 @@ import {
 import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
-import { setSearchResults } from '../../app/searchSlice';
+import { setqueryResults } from '../../app/querySlice';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const searchOnClick = () => {
-    setQuery(searchValue);
+    dispatch(setqueryResults(searchValue));
   };
   const handleChange = (e) => {
-    console.log(e.key);
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && location.pathname !== '/search') {
+      searchOnClick();
+      navigate('/search');
+    } else if (e.key === 'Enter') {
       searchOnClick();
     } else {
       setSearchValue(searchValue + e.key);
     }
   };
-
-  const searchResults = useFetch(
-    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
-  );
-  console.log(`prueba = ${searchValue}`);
-
-  useEffect(() => {
-    dispatch(setSearchResults(searchResults.data));
-  }, [searchResults]);
 
   return (
     <>
@@ -59,17 +52,17 @@ const NavBar = () => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
-                    onKeyPress={Event.key === 'Enter' ? <Link to={'/search'} /> : handleChange}
+                  onKeyPress={handleChange}
                 />
-              <Link to={'/search'}>
-                <button className="search-button">
+                <Link to={'/search'}>
+                  <button className="search-button">
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"
                       onClick={searchOnClick}
                     />
-                </button>
-                  </Link>
+                  </button>
+                </Link>
               </div>
               <div className="buttons-container">
                 <div>

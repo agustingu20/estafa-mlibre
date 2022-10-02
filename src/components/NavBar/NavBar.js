@@ -13,6 +13,7 @@ import {
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setqueryResults } from '../../app/querySlice';
+import { setOffset } from '../../app/offsetSlice';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -25,6 +26,7 @@ const NavBar = () => {
       navigate('/search');
     } else {
       dispatch(setqueryResults(searchValue));
+      dispatch(setOffset(0));
     }
   };
   const handleChange = (e) => {

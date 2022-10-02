@@ -20,7 +20,7 @@ const ProductDetail = () => {
     <>
       <div className="component-wrapper">
         <div className="image-wrapper">
-          <div className="d-flex flex-column mt-4 me-2">
+          <div className="d-flex flex-column mt-4 me-2" data-testid='product-detail'>
             {searchProductById.data?.pictures.map((picture) => (
               <img
                 key={picture.id}

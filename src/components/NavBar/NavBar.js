@@ -56,7 +56,7 @@ const NavBar = () => {
                   onKeyPress={handleChange}
                 />
                 <Link to={'/search'}>
-                  <button className="search-button">
+                  <button className="search-button" data-testid='searchButton'>
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
                       className="search-icon"

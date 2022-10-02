@@ -19,7 +19,7 @@ const SearchResultsCards = () => {
 
   return (
     <>
-      <div className="results-count">
+      <div className="results-count" data-testid="nav-results">
         <SearchFilters />
       </div>
       <div className="d-flex justify-content-center mb-5">

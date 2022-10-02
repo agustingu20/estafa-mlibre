@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import useFetch from '../../hooks/useFetch';
 import './productDetail.css';
@@ -6,42 +6,32 @@ import freeShipping from '../../assets/shipping.png';
 
 const ProductDetail = () => {
   const { productId } = useSelector((state) => state);
-
   const searchProductById = useFetch(
     `https://api.mercadolibre.com/items/${productId.id}`,
   );
-  console.log('producto', searchProductById);
 
-  if (!searchProductById.data) {
-    return null;
-  }
+  const [mainImage, setMainImage] = useState('');
+
+  useEffect(() => {
+    setMainImage(searchProductById.data?.pictures[0]?.url);
+  }, [searchProductById]);
 
   return (
     <>
       <div className="component-wrapper">
         <div className="image-wrapper">
           <div className="d-flex flex-column mt-4 me-2">
-            <img
-              className="secondary-image"
-              src={searchProductById.data?.pictures[1]?.url}
-              alt="image_2"
-            />
-            <img
-              className="secondary-image"
-              src={searchProductById.data?.pictures[2]?.url}
-              alt="image_3"
-            />
-            <img
-              className="secondary-image"
-              src={searchProductById.data?.pictures[3]?.url}
-              alt="image_4"
-            />
+            {searchProductById.data?.pictures.map((picture) => (
+              <img
+                key={picture.id}
+                className="secondary-image"
+                src={picture.url}
+                alt="mini_image"
+                onClick={() => setMainImage(picture.url)}
+              />
+            )).slice(-7)}
           </div>
-          <img
-            className="main-image"
-            src={searchProductById.data?.pictures[0]?.url}
-            alt="image_1"
-          />
+          <img className="main-image" src={mainImage} alt="main_image" />
         </div>
         <div className="description-wrapper">
           <div className="text-center">
@@ -56,11 +46,9 @@ const ProductDetail = () => {
             </h3>
           </div>
           <div className="d-flex flex-wrap justify-content-center">
-            <div className='buttons-wrapper'>
+            <div className="buttons-wrapper">
               <button className="button-buy m-2">Comprar</button>
-              <button className="shop-cart m-2">
-                Agregar Carrito
-              </button>
+              <button className="shop-cart m-2">Agregar Carrito</button>
             </div>
           </div>
         </div>

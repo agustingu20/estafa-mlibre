@@ -15,6 +15,7 @@
     width: 48px;
     height: 48px;
     margin: 0.5rem 0 0.5rem 0;
+    padding: 0.1rem;
 }
 
 .description-wrapper{
@@ -63,4 +64,10 @@
     background-color: transparent;
     font-weight: bold;
     border: #d32727 solid 1px;
+}
+
+.secondary-image:hover{
+    border: 2px red solid;
+    border-radius: 4px;
+    padding: 0.2rem;
 }

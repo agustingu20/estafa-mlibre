@@ -15,7 +15,7 @@ function ProductCard({ product }) {
       <Card.Body>
         <Card.Title className="textDescription">{product.title}</Card.Title>
         <Card.Text className="textPrice">
-          $ {Math.trunc(product.price)}
+          $ {Math.trunc(product.price).toLocaleString('es-ES')}
         </Card.Text>
         <Link to='/items'>
           <Button

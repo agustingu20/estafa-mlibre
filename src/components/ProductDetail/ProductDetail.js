@@ -42,7 +42,7 @@ const ProductDetail = () => {
               </p>
             )}
             <h3 className="mb-4">
-              $ {Math.trunc(searchProductById.data?.price)}
+              $ {Math.trunc(searchProductById.data?.price).toLocaleString('es-ES')}
             </h3>
           </div>
           <div className="d-flex flex-wrap justify-content-center">

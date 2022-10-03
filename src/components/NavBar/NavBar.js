@@ -67,13 +67,13 @@ const NavBar = () => {
                   placeholder="Buscar"
                   onKeyPress={handleChange}
                 />
-                  <button className="search-button" data-testid="searchButton">
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="search-icon"
-                      onClick={searchOnClick}
-                    />
-                  </button>
+                <button className="search-button" data-testid="searchButton">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="search-icon"
+                    onClick={searchOnClick}
+                  />
+                </button>
               </div>
               <div className="buttons-container">
                 <div>
@@ -86,7 +86,13 @@ const NavBar = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {categoryList.map((list) => (
-                        <Dropdown.Item key={`${list.id}`}>{list.category}</Dropdown.Item>
+                        <ul key={`${list.id}`}>
+                          <li>
+                            <Link to={`/search/category/${list.id}`}>
+                              {list.category}
+                            </Link>
+                          </li>
+                        </ul>
                       ))}
                     </Dropdown.Menu>
                   </Dropdown>

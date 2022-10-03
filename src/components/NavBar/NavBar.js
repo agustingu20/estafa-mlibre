@@ -86,7 +86,7 @@ const NavBar = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {categoryList.map((list) => (
-                        <ul key={`${list.id}`}>
+                        <ul key={`${list.id}`} className='category-link'>
                           <li>
                             <Link to={`/search/category/${list.id}`}>
                               {list.category}
@@ -104,8 +104,16 @@ const NavBar = () => {
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Perfil</Dropdown.Item>
-                      <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Perfil</Link>
+                        </li>
+                      </ul>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Cerrar Sesión</Link>
+                        </li>
+                      </ul>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

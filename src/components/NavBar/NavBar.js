@@ -14,6 +14,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setqueryResults } from '../../app/querySlice';
 import { setOffset } from '../../app/offsetSlice';
+import { categoryList } from '../../assets/categoryList';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -84,8 +85,9 @@ const NavBar = () => {
                       />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Action</Dropdown.Item>
-                      <Dropdown.Item>Action 2</Dropdown.Item>
+                      {categoryList.map((list) => (
+                        <Dropdown.Item key={`${list.id}`}>{list.category}</Dropdown.Item>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

@@ -46,7 +46,8 @@ const SearchResultsCards = () => {
       </div>
       <div className="d-flex justify-content-center mb-5">
         <Button size='sm' variant='danger' onClick={prevOnClick} className={offset.value / 12 === 0 ? 'disabled' : 'active'}>Anterior</Button>
-        <p className='my-auto mx-3'>{(offset.value / 12) + 1} de {totalPagination} páginas</p>
+        <p className='my-auto ms-3 me-2'>{(offset.value / 12) + 1}</p>
+        <p className='my-auto me-3'>de {totalPagination} páginas</p>
         <Button size='sm' variant='danger' onClick={nextOnClick} className={offset.value / 12 === totalPagination - 1 ? 'disabled' : 'active'}>Siguiente</Button>
       </div>
     </>

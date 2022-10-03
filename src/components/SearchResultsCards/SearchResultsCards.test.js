@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../../app/store';
 import SearchResultsCards from './SearchResultsCards';
@@ -16,5 +16,22 @@ describe('SearchResultsCard test', () => {
     const element = screen.getByTestId(testIdNav);
 
     expect(element).toHaveClass('results-count');
+  });
+  test('esperamos que ante un click el componente reaccione', () => {
+    render(
+      <Provider store={store}>
+          <SearchResultsCards />
+      </Provider>,
+    );
+
+    const buttonSiguiente = screen.getByText('Siguiente');
+    fireEvent.click(buttonSiguiente);
+
+    const buttonAnterior = screen.getByText('Anterior');
+    fireEvent.click(buttonAnterior);
+
+    const element = screen.getByText('1');
+
+    expect(element).toBeInTheDocument();
   });
 });

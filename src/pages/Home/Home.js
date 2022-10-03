@@ -24,7 +24,7 @@ const Home = () => {
         <h2 className='titulo-grupo-catgoria'>Compra por categoria</h2>
         <h4>Las mas populares son</h4>
         <div className='grupo-populares'>
-          <Link to='/' className='categoria hogar'>
+          <Link to='/search/category/MLA1574' className='categoria hogar'>
             <div>
               <img src={Hogar} alt='categoria hogar' />
               <div className='nombre-categoria'>
@@ -33,7 +33,7 @@ const Home = () => {
               </div>
             </div>
           </Link>
-          <Link to='/' className='categoria tecnologia'>
+          <Link to='/search/category/MLA1648' className='categoria tecnologia'>
             <div>
               <img src={Tecnologia} alt='categoria Tecnologia' />
               <div className='nombre-categoria'>
@@ -42,7 +42,7 @@ const Home = () => {
               </div>
             </div>
           </Link>
-          <Link to='/' className='categoria mascotas'>
+          <Link to='/search/category/MLA1071' className='categoria mascotas'>
             <div>
               <img src={Mascotas} alt='categoria Mascota' />
               <div className='nombre-categoria'>

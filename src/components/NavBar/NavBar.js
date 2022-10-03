@@ -14,6 +14,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
 import { setqueryResults } from '../../app/querySlice';
 import { setOffset } from '../../app/offsetSlice';
+import { categoryList } from '../../assets/categoryList';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -66,13 +67,13 @@ const NavBar = () => {
                   placeholder="Buscar"
                   onKeyPress={handleChange}
                 />
-                  <button className="search-button" data-testid="searchButton">
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="search-icon"
-                      onClick={searchOnClick}
-                    />
-                  </button>
+                <button className="search-button" data-testid="searchButton">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="search-icon"
+                    onClick={searchOnClick}
+                  />
+                </button>
               </div>
               <div className="buttons-container">
                 <div>
@@ -84,8 +85,15 @@ const NavBar = () => {
                       />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Action</Dropdown.Item>
-                      <Dropdown.Item>Action 2</Dropdown.Item>
+                      {categoryList.map((list) => (
+                        <ul key={`${list.id}`} className='category-link'>
+                          <li>
+                            <Link to={`/search/category/${list.id}`}>
+                              {list.category}
+                            </Link>
+                          </li>
+                        </ul>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -96,8 +104,16 @@ const NavBar = () => {
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Perfil</Dropdown.Item>
-                      <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Perfil</Link>
+                        </li>
+                      </ul>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Cerrar Sesión</Link>
+                        </li>
+                      </ul>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

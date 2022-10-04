@@ -1,0 +1,8 @@
+.buttom-component {
+  border-radius: 7px;
+  padding: 0.4rem 2rem;
+  background-color: var(--clr-rojo);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}

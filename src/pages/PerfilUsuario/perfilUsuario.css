@@ -3,6 +3,7 @@
     place-items: center;
     padding: 2rem;
     color: #fff;
+    flex: 1;
 }
 
 .wrapper-card-usuario .card-usuario{

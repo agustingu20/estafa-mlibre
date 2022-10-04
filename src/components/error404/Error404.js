@@ -9,7 +9,7 @@ import './error404.css';
 const error404 = () => {
   return (
     <div className=" backgroud-general">
-      <div className="d-flex justify-content-center my-5">
+      <div className="d-flex justify-content-center mb-5 pt-5">
         <Image className="" src={carritos} rounded />
       </div>
       <div className="d-flex justify-content-center">

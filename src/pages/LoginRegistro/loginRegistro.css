@@ -1,5 +1,6 @@
 .wrapper-login-registro{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 4rem;
@@ -30,8 +31,8 @@
 }
 
 .wrapper-login-registro .divisor{
-    height: 500px;
-    width: 1px;
+    height: 1px;
+    width: min(90%, 300px);
     background-color: var(--clr-rojo);
 }
 
@@ -52,4 +53,15 @@
 }
 .wrapper-registro{
     border-radius: 0 7px 7px 0;
+}
+
+@media screen and (min-width:900px) {
+    .wrapper-login-registro{
+        flex-direction: row;
+    }
+
+    .wrapper-login-registro .divisor{
+        height: 500px;
+        width: 1px;
+    }
 }

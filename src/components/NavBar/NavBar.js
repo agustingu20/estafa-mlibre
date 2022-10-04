@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -10,44 +10,50 @@ import {
 import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
-import { setSearchResults } from '../../app/searchSlice';
+import { setqueryResults } from '../../app/querySlice';
+import { setOffset } from '../../app/offsetSlice';
+import { categoryList } from '../../assets/categoryList';
 
 const NavBar = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const searchOnClick = () => {
-    setQuery(searchValue);
-  };
-  const handleChange = (e) => {
-    console.log(e.key);
-    if (e.key === 'Enter') {
-      searchOnClick();
+    if (location.pathname !== '/search') {
+      navigate('/search');
+      if (searchValue === '') {
+        dispatch(setqueryResults('vehiculos'));
+      } else {
+        dispatch(setqueryResults(searchValue));
+      }
     } else {
-      setSearchValue(searchValue + e.key);
+      dispatch(setqueryResults(searchValue));
+      dispatch(setOffset(0));
     }
   };
-
-  const searchResults = useFetch(
-    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
-  );
-  console.log(`prueba = ${searchValue}`);
-
-  useEffect(() => {
-    dispatch(setSearchResults(searchResults.data));
-  }, [searchResults]);
+  const handleChange = (e) => {
+    const { value } = e.target;
+    if (e.key === 'Enter' && location.pathname !== '/search') {
+      navigate('/search');
+      searchOnClick();
+    } else if (e.key === 'Enter') {
+      searchOnClick();
+    } else {
+      setSearchValue(value + e.key);
+    }
+  };
 
   return (
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Link to={'/'}>
             <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="button-colapse"
@@ -59,17 +65,15 @@ const NavBar = () => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
-                    onKeyPress={Event.key === 'Enter' ? <Link to={'/search'} /> : handleChange}
+                  onKeyPress={handleChange}
                 />
-              <Link to={'/search'}>
-                <button className="search-button">
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="search-icon"
-                      onClick={searchOnClick}
-                    />
+                <button className="search-button" data-testid="searchButton">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="search-icon"
+                    onClick={searchOnClick}
+                  />
                 </button>
-                  </Link>
               </div>
               <div className="buttons-container">
                 <div>
@@ -81,8 +85,15 @@ const NavBar = () => {
                       />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Action</Dropdown.Item>
-                      <Dropdown.Item>Action 2</Dropdown.Item>
+                      {categoryList.map((list) => (
+                        <ul key={`${list.id}`} className='category-link'>
+                          <li>
+                            <Link to={`/search/category/${list.id}`}>
+                              {list.category}
+                            </Link>
+                          </li>
+                        </ul>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -93,8 +104,16 @@ const NavBar = () => {
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Perfil</Dropdown.Item>
-                      <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Perfil</Link>
+                        </li>
+                      </ul>
+                      <ul className='category-link'>
+                        <li>
+                          <Link>Cerrar Sesión</Link>
+                        </li>
+                      </ul>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

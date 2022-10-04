@@ -1,0 +1,55 @@
+.wrapper-login-registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.wrapper-login,
+.wrapper-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    min-height: 20rem;
+    min-width: 35%;
+    background-color: var(--clr-dark);
+    opacity: 1;
+    visibility: visible;
+}
+
+.wrapper-login-registro:focus-within > :not(:focus-within){
+    opacity: .5;
+}
+
+.wrapper-login .titulo,
+.wrapper-registro .titulo{
+    color: #fff;
+}
+
+.wrapper-login-registro .divisor{
+    height: 500px;
+    width: 1px;
+    background-color: var(--clr-rojo);
+}
+
+.wrapper-login{
+    border-radius: 7px 0 0 7px;
+}
+
+.wrapper-login .modal-recupera-pass{
+    border-radius: 7px;
+    max-width: 50%;
+    padding: 2rem;
+    margin: 5rem auto;
+    border-color: var(--clr-rojo);    
+}
+
+.wrapper-login .modal-recupera-pass::backdrop{
+    background-color: rgba(0, 0, 0, .7);
+}
+.wrapper-registro{
+    border-radius: 0 7px 7px 0;
+}

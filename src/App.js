@@ -10,6 +10,7 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 import PerfilUsuario from './pages/PerfilUsuario/PerfilUsuario';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SearchResultsByCategory from './components/SearchResultsByCategory/SearchResultsByCategory';
+import LoginRegistro from './pages/LoginRegistro/LoginRegistro';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/items/:itemId" element={<ProductDetail />} />
           <Route path="/user" element={<PerfilUsuario />} />
+          <Route path="/login-registro" element={<LoginRegistro />} />
         </Routes>
         <Footer />
       </BrowserRouter>

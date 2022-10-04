@@ -6,3 +6,7 @@
   color: #fff;
   font-weight: 600;
 }
+
+.buttom-component:hover {
+  background-color: var(--clr-rojo-hover);
+}

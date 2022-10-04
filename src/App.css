@@ -28,3 +28,10 @@ body {
   background-size: cover;
   position: relative;
 }
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}

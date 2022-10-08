@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import LogoSL from '../../assets/logo-estafa-libre.png';
+import Boton from '../Boton/Boton';
 
 const Footer = () => {
   const {
@@ -50,7 +51,7 @@ const Footer = () => {
                 },
               )}
             />
-            <button>Suscribir</button>
+            <Boton texto={'Suscribir'}/>
           </form>
         </div>
         <div className="seccion-primaria">

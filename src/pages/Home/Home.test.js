@@ -10,21 +10,13 @@ describe('Teste de home page', () => {
     expect(element).toBeInTheDocument();
   });
 
-  test('Se espera que no renderice', () => {
+  test('Se espera que no renderice la card', () => {
     const element = screen.queryByText('Ver producto');
     expect(element).not.toBeInTheDocument();
   });
-
-  const product = [
-    {
-      thumbnail: 'img',
-      title: 'pc',
-      price: '2',
-    }];
-
   test('Se espera que SI renderice', () => {
-    render(<ProductCard product={product}/>);
-    const element = screen.getByText('Ver producto');
+    render(<Home/>, { wrapper: MemoryRouter });
+    const element = screen.findAllByText('Apple Earpods Con Conector De 3.5 Mm - Blanco');
     expect(element).toBeInTheDocument();
   });
 });

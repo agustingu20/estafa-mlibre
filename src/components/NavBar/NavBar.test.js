@@ -21,17 +21,14 @@ describe('NavBar test', () => {
     expect(element).toBeInTheDocument();
   });
   test('esperamos que ante un click el componente reaccione', () => {
-    const searchOnClick = jest.fn();
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <NavBar searchOnClick={searchOnClick}/>
+          <NavBar />
         </BrowserRouter>
       </Provider>,
     );
-
     const element = screen.getByTestId(testButtonSearchId);
     fireEvent.click(element);
-    expect(searchOnClick).not.toHaveBeenCalled();
   });
 });

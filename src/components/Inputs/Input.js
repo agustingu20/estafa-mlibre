@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import './input.css';
 
 const Input = ({

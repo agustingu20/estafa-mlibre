@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import store from '../../app/store';
 import SearchResultsCards from './SearchResultsCards';
 
@@ -20,7 +21,7 @@ describe('SearchResultsCard test', () => {
   test('esperamos que ante un click el componente reaccione', () => {
     render(
       <Provider store={store}>
-          <SearchResultsCards />
+        <SearchResultsCards />
       </Provider>,
     );
 
@@ -31,6 +32,19 @@ describe('SearchResultsCard test', () => {
     fireEvent.click(buttonAnterior);
 
     const element = screen.getByText('1');
+
+    expect(element).toBeInTheDocument();
+  });
+  test('esperamos que renderice el map de products cards', async () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <SearchResultsCards />
+        </BrowserRouter>
+      </Provider>,
+    );
+
+    const element = await screen.findByText('Amarok V6 Comfortline 3.0 258cv 4x4 At 0km');
 
     expect(element).toBeInTheDocument();
   });

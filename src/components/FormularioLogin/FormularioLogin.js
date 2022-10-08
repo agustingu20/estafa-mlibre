@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaLogin } from '../../utils/EsquemasValidaciones';
 import Input from '../Inputs/Input';
 import Boton from '../Boton/Boton';
@@ -29,8 +29,8 @@ const FormularioLogin = () => {
   });
   const onSubmitLogin = (data) => console.log(data);
   return (
-    <form className='wrapper-login' onSubmit={handleSubmit(onSubmitLogin)}>
-      <h2 className='titulo'>Ingresa</h2>
+    <form className="wrapper-login" onSubmit={handleSubmit(onSubmitLogin)}>
+      <h2 className="titulo">Ingresa</h2>
       <Input
         type={'email'}
         idFor={'emailLogin'}
@@ -45,10 +45,10 @@ const FormularioLogin = () => {
         hookForm={{ ...register('password') }}
         errorMensaje={errors?.password?.message}
       />
-      <a href='/' className='olvide-pass' onClick={recuperarPass}>
+      <a href="/" className="olvide-pass" onClick={recuperarPass}>
         Olvide mi contraseña :(
       </a>
-      <dialog className='modal-recupera-pass' ref={modalPass}>
+      <dialog className="modal-recupera-pass" ref={modalPass}>
         <p>
           Para recuperar tu contraseña debes depositarnos en la cuenta que te
           llegara a tu email luego de hacer click en &quot;Aceptar&quot;

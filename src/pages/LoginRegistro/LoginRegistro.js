@@ -1,7 +1,17 @@
 import { useRef } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 import Boton from '../../components/Boton/Boton';
 import Input from '../../components/Inputs/Input';
 import './loginRegistro.css';
+
+const schemaRegistro = yup.object({
+  nombre: yup.string().required('Este campo es requerido').min(5, 'Mínimo 5 caracteres.').max(20, 'Máximo 20 caracteres.'),
+  email: yup.string().required('Este campo es requerido').email('Debe ser un email valido.'),
+  password: yup.string().required('Este campo es requerido').min(5, 'Mínimo 5 caracteres.').max(20, 'Máximo 20 caracteres.'),
+  confirmPassword: yup.string().required('Este campo es requerido').oneOf([yup.ref('password'), null], 'Las contraseñass deben coincidir'),
+}).required();
 
 const LoginRegistro = () => {
   const modalPass = useRef();
@@ -18,9 +28,10 @@ const LoginRegistro = () => {
     modalPass.current.close();
   };
 
-  const IniciarSesion = (e) => {
-    e.preventDefault();
-  };
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schemaRegistro),
+  });
+  const onSubmit = data => console.log(data);
 
   return (
     <section className='wrapper-login-registro backgroud-general'>
@@ -41,20 +52,21 @@ const LoginRegistro = () => {
         <Boton
           texto={'Iniciar Sesión'}
           ref={botonIniciarSesion}
-          onClick={IniciarSesion}
         />
       </form>
       <div className="divisor"></div>
-      <form className='wrapper-registro'>
+      <form className='wrapper-registro' onSubmit={handleSubmit(onSubmit)}>
         <h2 className='titulo'>Registrate</h2>
-        <Input type={'text'} idFor={'nickNameRegistro'} label={'Nombre'} />
-        <Input type={'email'} idFor={'emailRegistro'} label={'E-mail'} />
-        <Input type={'password'} idFor={'passRegistro'} label={'Contraseña'} />
-        <Input type={'password'} idFor={'passRepiteRegistro'} label={'Repite Contraseña'} />
+        <Input type={'text'} idFor={'nickNameRegistro'} label={'Nombre'} hookForm={
+        { ...register('nombre') }} errorMensaje={errors?.nombre?.message}/>
+        <Input type={'email'} idFor={'emailRegistro'} label={'E-mail'} hookForm={
+          { ...register('email') }} errorMensaje={errors?.email?.message}/>
+        <Input type={'password'} idFor={'passRegistro'} label={'Contraseña'} hookForm={
+          { ...register('password') }} errorMensaje={errors?.password?.message}/>
+        <Input type={'password'} idFor={'passRepiteRegistro'} label={'Repite la contraseña'} hookForm={
+          { ...register('confirmPassword') }} errorMensaje={errors?.confirmPassword?.message}/>
         <Boton
           texto={'Enviar'}
-          ref={botonIniciarSesion}
-          onClick={IniciarSesion}
         />
       </form>
     </section>

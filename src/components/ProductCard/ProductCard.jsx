@@ -11,7 +11,7 @@ function ProductCard({ product }) {
     <Card className="text-center cardProduct">
       <Card.Img className="fluid" src={product.thumbnail} />
       <Card.Body>
-        <Card.Title className="textDescription">{product.title}</Card.Title>
+        <Card.Title className="textDescription" data-testid='titulo-card'>{product.title}</Card.Title>
         <Card.Text className="textPrice">
           $ {Math.trunc(product.price).toLocaleString('es-ES')}
         </Card.Text>

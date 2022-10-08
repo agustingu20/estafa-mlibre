@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 4rem;
+    flex: 1;
 }
 
 .wrapper-login,
@@ -54,6 +55,7 @@
 .wrapper-registro{
     border-radius: 0 7px 7px 0;
 }
+
 
 @media screen and (min-width:900px) {
     .wrapper-login-registro{

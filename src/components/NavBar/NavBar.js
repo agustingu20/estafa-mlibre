@@ -67,11 +67,12 @@ const NavBar = () => {
                   placeholder="Buscar"
                   onKeyPress={handleChange}
                 />
-                <button className="search-button" data-testid="searchButton">
+                <button className="search-button">
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
                     className="search-icon"
                     onClick={searchOnClick}
+                    data-testid="searchButton"
                   />
                 </button>
               </div>

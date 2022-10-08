@@ -41,7 +41,7 @@ const SearchResultsByCategory = () => {
       <div className="d-flex justify-content-center mb-5">
         <div className="results-card-container">
           {searchResultsByCategory.data?.results?.map((result) => (
-            <ProductCard key={`${result.id}`} product={result} />
+            <ProductCard key={`${result.id}`} product={result} data-testid='product-card'/>
           ))}
         </div>
       </div>

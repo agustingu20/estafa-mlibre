@@ -5,7 +5,7 @@ const Input = ({
 }) => {
   return (
     <div className='componente-input'>
-        <input type={type} id={idFor} placeholder=' ' {...hookForm}/>
+        <input type={type} id={idFor} placeholder=' ' autoComplete='current-password' {...hookForm}/>
         <label htmlFor={idFor} className='fake-placeholder'>{label}</label>
         {errorMensaje && <p className='mensaje-error'>{errorMensaje}</p>}
     </div>

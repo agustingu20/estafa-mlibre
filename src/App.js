@@ -15,7 +15,6 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import SearchResultsByCategory from './components/SearchResultsByCategory/SearchResultsByCategory';
 import LoginRegistro from './pages/LoginRegistro/LoginRegistro';
 
-
 function App() {
   useEffect(() => {
     spinner();

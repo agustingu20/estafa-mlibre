@@ -1,4 +1,5 @@
 import './perfilUsuario.css';
+import UserPerfil from '../../assets/userPerfil.png';
 
 const PerfilUsuario = () => {
   return (
@@ -7,7 +8,7 @@ const PerfilUsuario = () => {
         <div className='header-user'>
           <figure className='foto-nombre'>
             <img
-              src='https://assets.stickpng.com/images/585e4beacb11b227491c3399.png'
+              src={UserPerfil}
               alt='foto usuario'
             />
             <i className="fa-solid fa-pen-to-square"></i>

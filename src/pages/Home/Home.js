@@ -1,5 +1,6 @@
 import './home.css';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard/ProductCard.jsx';
 import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
@@ -14,8 +15,10 @@ const Home = () => {
   const computacionCategoria = useFetch('https://api.mercadolibre.com/categories/MLA1648');
   const mascotasCategoria = useFetch('https://api.mercadolibre.com/categories/MLA1071');
 
-  const conDescuento = data?.data?.results;
-
+  const [Descuento, setDescuento] = useState([]);
+  useEffect(() => {
+    setDescuento(data?.data?.results);
+  }, [data]);
   return (
     <section className='landing-wrapper backgroud-general'>
       <div className='elige-categoria'>
@@ -55,7 +58,7 @@ const Home = () => {
         <h2>Te puede interesar...</h2>
         { data
           ? <div className='grupo-destacados '>
-          {conDescuento?.slice(0, 12)?.map((product) => (
+          {Descuento?.slice(0, 12)?.map((product) => (
             <ProductCard key={product?.id} product={product}/>
           ))}
         </div> : <p> Productos no encontrados </p>

@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { setOffset } from '../../app/offsetSlice';
 import { setSearchResults } from '../../app/searchSlice';
+import ProductCard from '../ProductCard/ProductCard';
 import useFetch from '../../hooks/useFetch';
-import { ProductCard } from '../ProductCard';
 import SearchFilters from '../SearchFilters/SearchFilters';
 
 const SearchResultsByCategory = () => {

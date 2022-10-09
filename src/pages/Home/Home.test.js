@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import store from '../../app/store';
 import Home from './Home';
 
 describe('Teste de home page', () => {
@@ -7,11 +9,6 @@ describe('Teste de home page', () => {
   test('Se espera que renderice componente', () => {
     const element = screen.getByText('Las mas populares son');
     expect(element).toBeInTheDocument();
-  });
-
-  test('Se espera que no renderice la card', () => {
-    const element = screen.queryByText('Ver producto');
-    expect(element).not.toBeInTheDocument();
   });
   test('Se espera que renderice el componente card', async () => {
     render(<Home />, { wrapper: MemoryRouter });

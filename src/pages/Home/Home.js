@@ -9,7 +9,7 @@ import useFetch from '../../hooks/useFetch';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Home = () => {
-  const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount');
+  const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount&limit=12');
 
   const hogarCategoria = useFetch('https://api.mercadolibre.com/categories/MLA1574');
   const computacionCategoria = useFetch('https://api.mercadolibre.com/categories/MLA1648');
@@ -58,7 +58,7 @@ const Home = () => {
         <h2>Te puede interesar...</h2>
         { data
           ? <div className='grupo-destacados '>
-          {Descuento?.slice(0, 12)?.map((product) => (
+          {Descuento?.map((product) => (
             <ProductCard key={product?.id} product={product}/>
           ))}
         </div> : <p> Productos no encontrados </p>

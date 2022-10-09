@@ -27,7 +27,7 @@ const ProductDetail = () => {
                 key={picture.id}
                 className="secondary-image"
                 src={picture.url}
-                alt="mini_image"
+                alt={`mini_image_${picture.id}`}
                 onClick={() => setMainImage(picture.url)}
               />
             )).slice(-7)}

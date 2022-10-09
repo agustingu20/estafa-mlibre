@@ -1,12 +1,12 @@
 import './home.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductCard from '../../components/ProductCard/ProductCard.jsx';
 import Hogar from '../../assets/hogar.webp';
 import Tecnologia from '../../assets/tecnologia.webp';
 import Mascotas from '../../assets/mascotas.webp';
 import About from '../../assets/about-landing.webp';
 import useFetch from '../../hooks/useFetch';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Home = () => {
   const data = useFetch('https://api.mercadolibre.com/sites/MLA/search?q=ipod&FilterID=discount&limit=12');

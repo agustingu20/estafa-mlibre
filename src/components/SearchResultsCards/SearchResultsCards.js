@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setOffset } from '../../app/offsetSlice';
 import { setSearchResults } from '../../app/searchSlice';
 import useFetch from '../../hooks/useFetch';
-import ProductCard from '../ProductCard/ProductCard';
+import { ProductCard } from '../ProductCard';
 import SearchFilters from '../SearchFilters/SearchFilters';
 import './resultCards.css';
 

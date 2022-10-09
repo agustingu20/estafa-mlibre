@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { setOffset } from '../../app/offsetSlice';
 import { setSearchResults } from '../../app/searchSlice';
-import ProductCard from '../ProductCard/ProductCard';
+import { ProductCard } from '../ProductCard';
 import useFetch from '../../hooks/useFetch';
 import SearchFilters from '../SearchFilters/SearchFilters';
 

@@ -1,5 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import { useState } from 'react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import store from '../../app/store';
@@ -29,7 +28,7 @@ describe('ProductDetail test', () => {
 
     const router = createMemoryRouter(routes, {
       initialEntries: ['/items/MLA1138453784'],
-      initialIndex: 1,
+      initialIndex: 0,
     });
     render(
       <Provider store={store}>

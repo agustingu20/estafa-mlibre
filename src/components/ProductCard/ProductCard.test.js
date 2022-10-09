@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
 const data = {
@@ -10,13 +11,21 @@ const data = {
 
 describe('Card Producto Test', () => {
   test('Renderizado de las card', () => {
-    render(<ProductCard product={data} />);
+    render(
+      <BrowserRouter>
+        <ProductCard product={data} />
+      </BrowserRouter>,
+    );
     const element = screen.getByText(data.title);
     expect(element).toBeInTheDocument();
   });
   test('No renderiza las cards si no se pasa dato vacio', () => {
-    render(<ProductCard product={{}} />);
-    const element = screen.getByText(data.title);
-    expect(element).toBeInTheDocument();
+    render(
+      <BrowserRouter>
+        <ProductCard product={{}} />
+      </BrowserRouter>,
+    );
+    const element = screen.queryByText(data.title);
+    expect(element).not.toBeInTheDocument();
   });
 });

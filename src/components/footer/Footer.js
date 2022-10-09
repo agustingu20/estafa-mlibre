@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import LogoSL from '../../assets/logo-estafa-libre.png';
 import Boton from '../Boton/Boton';
+import { suscription } from '../../hooks/suscripcion';
 
 const Footer = () => {
   const {
@@ -14,10 +15,11 @@ const Footer = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    axios(
-      `https://api-estafamlibre.herokuapp.com/api/suscription/${data.suscribir}`,
+  const onSubmit = async (correo) => {
+    const { data } = await axios(
+      `https://api-estafamlibre.herokuapp.com/api/suscription/${correo.suscribir}`,
     );
+    suscription(data);
     reset();
   };
   return (
@@ -51,7 +53,7 @@ const Footer = () => {
                 },
               )}
             />
-            <Boton texto={'Suscribir'}/>
+            <Boton texto={'Suscribir'} />
           </form>
         </div>
         <div className="seccion-primaria">
@@ -97,6 +99,7 @@ const Footer = () => {
           <p>ALL RIGHT RESERVED</p>
         </div>
       </Container>
+      ;
     </footer>
   );
 };

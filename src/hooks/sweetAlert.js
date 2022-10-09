@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+
 import Swal from 'sweetalert2';
 import logoSpinner from '../assets/mini-logo-estafa-libre.png';
 

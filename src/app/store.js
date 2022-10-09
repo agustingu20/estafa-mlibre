@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+
 import { configureStore } from '@reduxjs/toolkit';
 import offsetSlice from './offsetSlice';
 import querySlice from './querySlice';

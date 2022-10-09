@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import store from '../../app/store';
 import Home from './Home';
-import ProductCard from '../../components/ProductCard/ProductCard.jsx';
 
 describe('Teste de home page', () => {
   render(<Home/>, { wrapper: MemoryRouter });
@@ -10,13 +11,17 @@ describe('Teste de home page', () => {
     expect(element).toBeInTheDocument();
   });
 
-  test('Se espera que no renderice la card', () => {
-    const element = screen.queryByText('Ver producto');
-    expect(element).not.toBeInTheDocument();
+  test('Se espera que SI renderice el resultado del map', async () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>,
+    );
+
+    const element = await screen.findByText('Auriculares Akg K52 Matte Black');
+
+    expect(element).toBeInTheDocument();
   });
-  // test('Se espera que SI renderice', () => {
-  //   render(<Home/>, { wrapper: MemoryRouter });
-  //   const element = screen.findAllByText('Apple Earpods Con Conector De 3.5 Mm - Blanco');
-  //   expect(element).toBeInTheDocument();
-  // });
 });

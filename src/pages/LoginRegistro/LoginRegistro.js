@@ -4,7 +4,7 @@ import './loginRegistro.css';
 
 const LoginRegistro = () => {
   return (
-    <section className='wrapper-login-registro backgroud-general'>
+    <section className='wrapper-login-registro backgroud-general' data-testid='loginRegistro'>
       <FormularioLogin />
       <div className='divisor'></div>
       <FormularioRegistro />

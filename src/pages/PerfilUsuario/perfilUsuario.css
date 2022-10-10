@@ -1,0 +1,83 @@
+.wrapper-card-usuario{
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    color: #fff;
+    flex: 1;
+}
+
+.wrapper-card-usuario .card-usuario{
+    border-radius: 7px;
+    border: 1px solid var(--clr-rojo);
+    background-color: var(--clr-dark);
+    width: min(80%,500px);
+}
+
+.wrapper-card-usuario .card-usuario .header-user{
+    background-color: var(--clr-rojo);
+    height: 10rem;
+    position: relative;
+    margin-bottom: 10rem;
+}
+
+.card-usuario .header-user .foto-nombre{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+    margin-bottom: 5rem;
+}
+
+.card-usuario .header-user .foto-nombre img{
+    height: 10rem;
+}
+
+.card-usuario .header-user .foto-nombre .fa-pen-to-square{
+    font-size: 2rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.card-usuario .header-user .foto-nombre .fa-pen-to-square:hover{
+    color: rgb(184, 184, 184);
+}
+
+.card-usuario .header-user .foto-nombre .nivel{
+    color: rgb(80, 80, 80);
+}
+
+
+.wrapper-card-usuario .datos-user{
+    padding: 1rem 2rem;
+}
+
+.wrapper-card-usuario .datos-user .dato {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.wrapper-card-usuario .datos-user .dato .key{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-right: 1rem;
+
+}
+
+.wrapper-card-usuario .datos-user .dato button.agregar-dato{
+    border: none;
+    padding: .5rem 2rem;
+    background-color: var(--clr-rojo);
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.wrapper-card-usuario .datos-user .dato button.agregar-dato:hover{
+    background-color: var(--clr-rojo-hover);
+}
+
+.profile-img{
+    border-radius: 50%;
+}

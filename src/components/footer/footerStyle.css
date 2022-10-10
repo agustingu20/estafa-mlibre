@@ -1,0 +1,136 @@
+.footer-wrapper {
+  background-color: var(--clr-dark);
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1em;
+}
+
+.footer-wrapper p {
+  margin-bottom: 0;
+}
+
+.footer-wrapper a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-wrapper a:hover {
+  color: var(--clr-rojo);
+}
+
+.footer-wrapper .suscribir {
+  display: none;
+}
+
+.footer-wrapper .seccion-primaria {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 2.8rem;
+}
+
+.seccion-primaria .columna {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-between;
+}
+
+.columna .titulo-columna {
+  color: var(--clr-rojo);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.columna-uno img.logo {
+  height: 50px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.columna-uno .redes {
+  display: flex;
+  gap: 1rem;
+  font-size: 3rem;
+}
+
+.separador {
+  background-color: var(--clr-rojo);
+  height: 1.5px;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.seccion-secundaria {
+  text-align: center;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 900px) {
+  .footer-wrapper .suscribir {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    gap: 3rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .suscribir .text {
+    width: 33rem;
+  }
+
+  .text span.resaltar {
+    color: var(--clr-rojo);
+  }
+
+  .suscribir .formulario {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .formulario input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 0.5px solid var(--clr-rojo);
+    background-color: transparent;
+    color: #fff;
+    caret-color: var(--clr-rojo);
+  }
+
+  .formulario input.error {
+    outline: 4px solid var(--clr-rojo-hover);
+  }
+
+  .footer-wrapper .seccion-primaria {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .seccion-primaria .columna {
+    height: 200px;
+  }
+
+  .columna-uno {
+    max-width: 20%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .seccion-secundaria {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .wrapper {
+    max-width: 70%;
+  }
+}

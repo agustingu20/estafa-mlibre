@@ -1,0 +1,137 @@
+.landing-wrapper {
+  padding-top: 4rem;
+  text-decoration: none;
+}
+
+.landing-wrapper .elige-categoria {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.elige-categoria > h2 {
+  color: var(--clr-rojo);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.elige-categoria > h4 {
+  color: rgb(177, 177, 177);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.elige-categoria .grupo-populares .categoria {
+  text-decoration: none;
+  width: 100%;
+  text-align: right;
+  position: relative;
+}
+
+.grupo-populares .categoria > div {
+  height: 250px;
+}
+
+.grupo-populares .categoria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grupo-populares .categoria .nombre-categoria {
+  position: absolute;
+  z-index: 123;
+  right: 0.5rem;
+  top: 0.2rem;
+}
+
+.categoria .nombre-categoria h2 {
+  color: var(--clr-rojo);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.categoria .nombre-categoria h5 {
+  color: var(--clr-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.destacados {
+  padding: 1rem;
+}
+
+.destacados h2 {
+  color: #fff;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.destacados .grupo-destacados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around ;
+}
+
+.pequenio-aboutUs {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pequenio-aboutUs img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.pequenio-aboutUs .text-wrapper {
+  position: absolute;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem;
+  inset: 0;
+  background-color: rgba(239, 54, 54, 0.7);
+}
+
+.pequenio-aboutUs .text-wrapper h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.pequenio-aboutUs .text-wrapper p {
+  font-weight: 500;
+}
+
+@media screen and (min-width: 640px) {
+  .grupo-populares {
+    display: flex;
+  }
+
+  .pequenio-aboutUs {
+    display: flex;
+  }
+
+  .pequenio-aboutUs .text-wrapper {
+    position: relative;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .elige-categoria,
+  .destacados,
+  .pequenio-aboutUs {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .elige-categoria,
+  .destacados,
+  .pequenio-aboutUs {
+    max-width: 70%;
+  }
+}

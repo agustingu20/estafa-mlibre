@@ -15,8 +15,8 @@ const FormularioRegistro = () => {
     resolver: yupResolver(schemaRegistro),
   });
   const onSubmitRegistro = async (data) => {
-    const response = await axios.post('https://api-estafamlibre.herokuapp.com/api/auth/login');
-    console.log(data);
+    const { confirmPassword, ...dataRest } = data;
+    const response = await axios.post('/usuarios', dataRest);
     console.log(response);
   };
   return (

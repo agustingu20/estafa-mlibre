@@ -29,7 +29,7 @@ const FormularioLogin = () => {
     resolver: yupResolver(schemaLogin),
   });
   const onSubmitLogin = async (data) => {
-    const response = await axios.post('https://api-estafamlibre.herokuapp.com/api/auth/login', data);
+    const response = await axios.post('/auth/login', data);
     localStorage.setItem('token', JSON.stringify(response.data.token));
     localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
     window.location.href = '/';

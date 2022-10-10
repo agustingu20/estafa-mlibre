@@ -16,7 +16,7 @@ import { setqueryResults } from '../../app/querySlice';
 import { setOffset } from '../../app/offsetSlice';
 import { categoryList } from '../../assets/categoryList';
 
-const NavBar = () => {
+const NavBar = ({ token, user, logOut }) => {
   const [searchValue, setSearchValue] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -99,23 +99,23 @@ const NavBar = () => {
                   </Dropdown>
                 </div>
                 <div className="d-flex justify-content-center">
-                  <p className="user-text">User</p>
+                  <p className="user-text">{token ? user.nombre : <Link className='login-link' to='/login-registro'>Login</Link>}</p>
                   <Dropdown>
                     <Dropdown.Toggle className="dropdown-icon-user">
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    {token && <Dropdown.Menu>
                       <ul className='category-link'>
                         <li>
-                          <Link>Perfil</Link>
+                          <Link to='/user'>Perfil</Link>
                         </li>
                       </ul>
                       <ul className='category-link'>
                         <li>
-                          <Link>Cerrar Sesión</Link>
+                          <button onClick={logOut} className='logout-button'>Cerrar Sesión</button>
                         </li>
                       </ul>
-                    </Dropdown.Menu>
+                    </Dropdown.Menu>}
                   </Dropdown>
                 </div>
               </div>

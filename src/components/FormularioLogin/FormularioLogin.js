@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -27,7 +28,11 @@ const FormularioLogin = () => {
   } = useForm({
     resolver: yupResolver(schemaLogin),
   });
-  const onSubmitLogin = (data) => console.log(data);
+  const onSubmitLogin = async (data) => {
+    const response = await axios.post('https://api-estafamlibre.herokuapp.com/api/auth/login', data);
+    localStorage.setItem('token', JSON.stringify(response.data.token));
+    localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
+  };
   return (
     <form className="wrapper-login" onSubmit={handleSubmit(onSubmitLogin)}>
       <h2 className="titulo">Ingresa</h2>
@@ -35,7 +40,7 @@ const FormularioLogin = () => {
         type={'email'}
         idFor={'emailLogin'}
         label={'E-mail'}
-        hookForm={{ ...register('email') }}
+        hookForm={{ ...register('correo') }}
         errorMensaje={errors?.email?.message}
       />
       <Input

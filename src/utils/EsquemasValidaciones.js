@@ -7,8 +7,8 @@ export const schemaRegistro = yup
       .string()
       .required('Este campo es requerido')
       .min(5, 'Mínimo 5 caracteres.')
-      .max(20, 'Máximo 20 caracteres.'),
-    email: yup
+      .max(50, 'Máximo 50 caracteres.'),
+    correo: yup
       .string()
       .required('Este campo es requerido')
       .email('Debe ser un email valido.'),
@@ -16,7 +16,7 @@ export const schemaRegistro = yup
       .string()
       .required('Este campo es requerido')
       .min(5, 'Mínimo 5 caracteres.')
-      .max(20, 'Máximo 20 caracteres.'),
+      .max(40, 'Máximo 40 caracteres.'),
     confirmPassword: yup
       .string()
       .required('Este campo es requerido')
@@ -26,7 +26,7 @@ export const schemaRegistro = yup
 
 export const schemaLogin = yup
   .object({
-    email: yup
+    correo: yup
       .string()
       .required('Este campo es requerido')
       .email('Debe ser un email valido.'),
@@ -34,6 +34,6 @@ export const schemaLogin = yup
       .string()
       .required('Este campo es requerido')
       .min(5, 'Mínimo 5 caracteres.')
-      .max(20, 'Máximo 20 caracteres.'),
+      .max(40, 'Máximo 40 caracteres.'),
   })
   .required();

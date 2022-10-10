@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaRegistro } from '../../utils/EsquemasValidaciones';
@@ -13,7 +14,11 @@ const FormularioRegistro = () => {
   } = useForm({
     resolver: yupResolver(schemaRegistro),
   });
-  const onSubmitRegistro = (data) => console.log(data);
+  const onSubmitRegistro = async (data) => {
+    const response = await axios.post('https://api-estafamlibre.herokuapp.com/api/auth/login');
+    console.log(data);
+    console.log(response);
+  };
   return (
     <form
       className="wrapper-registro"
@@ -31,7 +36,7 @@ const FormularioRegistro = () => {
         type={'email'}
         idFor={'emailRegistro'}
         label={'E-mail'}
-        hookForm={{ ...register('email') }}
+        hookForm={{ ...register('correo') }}
         errorMensaje={errors?.email?.message}
       />
       <Input

@@ -7,19 +7,7 @@ import Input from '../Inputs/Input';
 import Boton from '../Boton/Boton';
 
 const FormularioLogin = () => {
-  const modalPass = useRef();
-  const cerrarModal = useRef();
   const botonIniciarSesion = useRef();
-
-  const recuperarPass = (e) => {
-    e.preventDefault();
-    modalPass.current.showModal();
-  };
-
-  const enviarCuenta = (e) => {
-    e.preventDefault();
-    modalPass.current.close();
-  };
 
   const {
     register,
@@ -51,16 +39,9 @@ const FormularioLogin = () => {
         hookForm={{ ...register('password') }}
         errorMensaje={errors?.password?.message}
       />
-      <a href="/" className="olvide-pass" onClick={recuperarPass}>
+      <a href="/" className="olvide-pass" >
         Olvide mi contraseña :(
       </a>
-      <dialog className="modal-recupera-pass" ref={modalPass}>
-        <p>
-          Para recuperar tu contraseña debes depositarnos en la cuenta que te
-          llegara a tu email luego de hacer click en &quot;Aceptar&quot;
-        </p>
-        <Boton texto={'Aceptar'} ref={cerrarModal} onClick={enviarCuenta} />
-      </dialog>
       <Boton texto={'Iniciar Sesión'} ref={botonIniciarSesion} />
     </form>
   );

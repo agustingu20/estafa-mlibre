@@ -1,19 +1,22 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './perfilUsuario.css';
 
 const PerfilUsuario = ({ token, user }) => {
   const navigate = useNavigate();
 
-  if (!token) {
-    navigate('/');
-  }
+  useEffect(() => {
+    if (!token) {
+      navigate('/');
+    }
+  }, []);
 
   return (
     <div className="wrapper-card-usuario backgroud-general">
       <div className="card-usuario">
         <div className="header-user">
           <figure className="foto-nombre">
-            <img src={user.avatar} alt="foto usuario" className='profile-img' />
+            <img src={user.avatar} alt="foto usuario" className="profile-img" />
             <i className="fa-solid fa-pen-to-square"></i>
             <h3 className="nombre">{user.nombre}</h3>
             <p className="nivel">Nivel 1</p>

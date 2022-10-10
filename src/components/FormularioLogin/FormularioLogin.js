@@ -32,6 +32,7 @@ const FormularioLogin = () => {
     const response = await axios.post('https://api-estafamlibre.herokuapp.com/api/auth/login', data);
     localStorage.setItem('token', JSON.stringify(response.data.token));
     localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
+    window.location.href = '/';
   };
   return (
     <form className="wrapper-login" onSubmit={handleSubmit(onSubmitLogin)}>

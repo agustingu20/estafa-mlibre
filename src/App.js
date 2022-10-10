@@ -49,7 +49,7 @@ function App() {
           <Route path="/search/category/:categoryId" element={<SearchResultsByCategory />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/items/:itemId" element={<ProductDetail />} />
-          <Route path="/user" element={<PerfilUsuario />} />
+          <Route path="/user" element={<PerfilUsuario token={token} user={user} />} />
           <Route path="/login-registro" element={<LoginRegistro />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>

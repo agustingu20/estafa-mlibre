@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaLogin } from '../../utils/EsquemasValidaciones';
 import Input from '../Inputs/Input';
 import Boton from '../Boton/Boton';
+import { suscription } from '../../hooks/suscripcion';
 
 const FormularioLogin = () => {
   const botonIniciarSesion = useRef();
@@ -17,10 +18,14 @@ const FormularioLogin = () => {
     resolver: yupResolver(schemaLogin),
   });
   const onSubmitLogin = async (data) => {
-    const response = await axios.post('/auth/login', data);
-    localStorage.setItem('token', JSON.stringify(response.data.token));
-    localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
-    window.location.href = '/';
+    try {
+      const response = await axios.post('/auth/login', data);
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+      localStorage.setItem('usuario', JSON.stringify(response.data.usuario));
+      window.location.href = '/';
+    } catch (error) {
+      suscription(error.response.data.msg);
+    }
   };
   return (
     <form className="wrapper-login" onSubmit={handleSubmit(onSubmitLogin)}>
@@ -39,7 +44,7 @@ const FormularioLogin = () => {
         hookForm={{ ...register('password') }}
         errorMensaje={errors?.password?.message}
       />
-      <a href="/" className="olvide-pass" >
+      <a href="/" className="olvide-pass">
         Olvide mi contraseña :(
       </a>
       <Boton texto={'Iniciar Sesión'} ref={botonIniciarSesion} />

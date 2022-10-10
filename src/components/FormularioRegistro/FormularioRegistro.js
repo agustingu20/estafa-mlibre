@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schemaRegistro } from '../../utils/EsquemasValidaciones';
 import Input from '../Inputs/Input';
 import Boton from '../Boton/Boton';
+import { suscription } from '../../hooks/suscripcion';
 
 const FormularioRegistro = () => {
   const {
@@ -15,9 +17,19 @@ const FormularioRegistro = () => {
     resolver: yupResolver(schemaRegistro),
   });
   const onSubmitRegistro = async (data) => {
-    const { confirmPassword, ...dataRest } = data;
-    const response = await axios.post('/usuarios', dataRest);
-    console.log(response);
+    try {
+      const { confirmPassword, ...dataRest } = data;
+      const response = await axios.post('/usuarios', dataRest);
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro correcto',
+        text: 'Se a registrado correctamente',
+      }).then(() => {
+        window.location.href = '/';
+      });
+    } catch (error) {
+      suscription(error.response.data.errors[0].msg);
+    }
   };
   return (
     <form

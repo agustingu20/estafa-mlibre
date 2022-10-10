@@ -99,7 +99,6 @@ const Footer = () => {
           <p>ALL RIGHT RESERVED</p>
         </div>
       </Container>
-      ;
     </footer>
   );
 };

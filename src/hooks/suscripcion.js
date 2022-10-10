@@ -9,7 +9,7 @@ export const suscription = (resp) => {
     imageWidth: 300,
     imageHeight: 300,
     imageAlt: 'Estafa Libre logo',
-    title: resp.status === 201 ? resp.res : 'Se precento un error',
+    title: resp.status === 201 ? resp.res : 'Se presentó un error',
     showConfirmButton: false,
   });
 };

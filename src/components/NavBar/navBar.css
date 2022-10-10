@@ -123,6 +123,21 @@ content: none;
   margin: 0 0 0.5rem 0;
 }
 
+.logout-button{
+  border: none;
+  background-color: transparent;
+}
+
+.login-link{
+  text-decoration: none;
+  color: white;
+}
+
+.login-link:hover{
+  text-decoration: none;
+  color: white;
+}
+
 @media only screen and (max-width: 990px) {
   .nav-class {
     margin-top: 1rem;

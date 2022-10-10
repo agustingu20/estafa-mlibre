@@ -77,3 +77,7 @@
 .wrapper-card-usuario .datos-user .dato button.agregar-dato:hover{
     background-color: var(--clr-rojo-hover);
 }
+
+.profile-img{
+    border-radius: 50%;
+}

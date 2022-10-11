@@ -37,10 +37,10 @@ const NavBar = ({ token, user, logOut }) => {
   };
   const handleChange = (e) => {
     const { value } = e.target;
-    if (e.key === 'Enter' && location.pathname !== '/search') {
+    if (e.code === 'Enter' && location.pathname !== '/search') {
       navigate('/search');
       searchOnClick();
-    } else if (e.key === 'Enter') {
+    } else if (e.code === 'Enter') {
       searchOnClick();
     } else {
       setSearchValue(value + e.key);
@@ -65,7 +65,8 @@ const NavBar = ({ token, user, logOut }) => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
-                  onKeyPress={handleChange}
+                  data-testid="searchInput"
+                  onKeyDown={handleChange}
                 />
                 <button className="search-button">
                   <FontAwesomeIcon
@@ -87,7 +88,7 @@ const NavBar = ({ token, user, logOut }) => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       {categoryList.map((list) => (
-                        <ul key={`${list.id}`} className='category-link'>
+                        <ul key={`${list.id}`} className="category-link">
                           <li>
                             <Link to={`/search/category/${list.id}`}>
                               {list.category}
@@ -99,23 +100,35 @@ const NavBar = ({ token, user, logOut }) => {
                   </Dropdown>
                 </div>
                 <div className="d-flex justify-content-center">
-                  <p className="user-text">{token ? user.nombre : <Link className='login-link' to='/login-registro'>Login</Link>}</p>
+                  <p className="user-text">
+                    {token ? (
+                      user.nombre
+                    ) : (
+                      <Link className="login-link" to="/login-registro">
+                        Login
+                      </Link>
+                    )}
+                  </p>
                   <Dropdown>
                     <Dropdown.Toggle className="dropdown-icon-user">
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
-                    {token && <Dropdown.Menu>
-                      <ul className='category-link'>
-                        <li>
-                          <Link to='/user'>Perfil</Link>
-                        </li>
-                      </ul>
-                      <ul className='category-link'>
-                        <li>
-                          <button onClick={logOut} className='logout-button'>Cerrar Sesión</button>
-                        </li>
-                      </ul>
-                    </Dropdown.Menu>}
+                    {token && (
+                      <Dropdown.Menu>
+                        <ul className="category-link">
+                          <li>
+                            <Link to="/user">Perfil</Link>
+                          </li>
+                        </ul>
+                        <ul className="category-link">
+                          <li>
+                            <button onClick={logOut} className="logout-button">
+                              Cerrar Sesión
+                            </button>
+                          </li>
+                        </ul>
+                      </Dropdown.Menu>
+                    )}
                   </Dropdown>
                 </div>
               </div>

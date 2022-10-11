@@ -37,7 +37,6 @@ const NavBar = ({ token, user, logOut }) => {
   };
   const handleChange = (e) => {
     const { value } = e.target;
-    console.log(e);
     if (e.code === 'Enter' && location.pathname !== '/search') {
       navigate('/search');
       searchOnClick();

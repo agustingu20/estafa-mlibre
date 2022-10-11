@@ -55,7 +55,7 @@ const NavBar = ({ token, user, logOut }) => {
   };
 
   useEffect(() => {
-    if (window.screen.availWidth <= 1024) {
+    if (window.screen.availWidth <= 1280) {
       setIsMobile(true);
     } else {
       setIsMobile(false);

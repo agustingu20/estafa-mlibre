@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -18,7 +18,6 @@ import { categoryList } from '../../assets/categoryList';
 
 const NavBar = ({ token, user, logOut }) => {
   const [searchValue, setSearchValue] = useState('');
-  const [isMobile, setIsMobile] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,14 +53,6 @@ const NavBar = ({ token, user, logOut }) => {
     setSearchValue(value);
   };
 
-  useEffect(() => {
-    if (window.screen.availWidth <= 1280) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
-
   return (
     <>
       <Navbar bg="dark" expand="lg">
@@ -81,7 +72,8 @@ const NavBar = ({ token, user, logOut }) => {
                   className="search-input"
                   placeholder="Buscar"
                   data-testid="searchInput"
-                  onKeyDown={isMobile ? handleChangeMobile : handleChange}
+                  onKeyDown={handleChange}
+                  onChange={handleChangeMobile}
                 />
                 <button className="search-button">
                   <FontAwesomeIcon

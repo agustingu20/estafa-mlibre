@@ -35,6 +35,7 @@ const NavBar = ({ token, user, logOut }) => {
       dispatch(setOffset(0));
     }
   };
+
   const handleChange = (e) => {
     const { value } = e.target;
     if (e.code === 'Enter' && location.pathname !== '/search') {
@@ -45,6 +46,11 @@ const NavBar = ({ token, user, logOut }) => {
     } else {
       setSearchValue(value + e.key);
     }
+  };
+
+  const handleChangeMobile = (e) => {
+    const { value } = e.target;
+    setSearchValue(value);
   };
 
   return (
@@ -67,6 +73,7 @@ const NavBar = ({ token, user, logOut }) => {
                   placeholder="Buscar"
                   data-testid="searchInput"
                   onKeyDown={handleChange}
+                  onChange={handleChangeMobile}
                 />
                 <button className="search-button">
                   <FontAwesomeIcon

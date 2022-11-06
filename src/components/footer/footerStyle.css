@@ -6,24 +6,24 @@ footer {
   font-size: 1em;
 }
 
-.footer-wrapper p {
+footer p {
   margin-bottom: 0;
 }
 
-.footer-wrapper a {
+footer a {
   color: #fff;
   text-decoration: none;
 }
 
-.footer-wrapper a:hover {
+footer a:hover {
   color: var(--clr-rojo);
 }
 
-.footer-wrapper .suscribir {
+footer .suscribir {
   display: none;
 }
 
-.footer-wrapper .seccion-primaria {
+footer .seccion-primaria {
   display: grid;
   grid-template-columns: 50% auto;
   gap: 2.8rem;
@@ -67,7 +67,7 @@ footer {
 }
 
 @media screen and (min-width: 900px) {
-  .footer-wrapper .suscribir {
+  footer .suscribir {
     width: 100%;
     display: flex;
     align-items: center;
@@ -103,7 +103,7 @@ footer {
     outline: 4px solid var(--clr-rojo-hover);
   }
 
-  .footer-wrapper .seccion-primaria {
+  footer .seccion-primaria {
     display: flex;
     justify-content: space-between;
   }

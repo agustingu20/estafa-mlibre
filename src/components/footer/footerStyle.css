@@ -1,5 +1,5 @@
 .footer-wrapper {
-  background-color: var(--clr-dark);
+  background-color: #1a1a1a;
   color: #fff;
   padding: 1rem;
   width: 100%;
@@ -101,19 +101,6 @@
 
   .formulario input.error {
     outline: 4px solid var(--clr-rojo-hover);
-  }
-
-  .formulario button {
-    border-radius: 7px;
-    padding: 0.4rem 2rem;
-    background-color: var(--clr-rojo);
-    border: none;
-    color: #fff;
-    font-weight: 600;
-  }
-
-  .formulario button:hover {
-    background-color: var(--clr-rojo-hover);
   }
 
   .footer-wrapper .seccion-primaria {

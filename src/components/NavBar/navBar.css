@@ -63,7 +63,7 @@ background-color: red;
 
 .buttons-container{
   display: flex;
-  margin-left: 6rem;
+  margin-left: 8rem;
 }
 
 .filter-icon {
@@ -79,7 +79,6 @@ background-color: red;
 .dropdown-icon{
     background-color: transparent;
     border: none;
-    margin-left: 5rem;
 }
 
 .dropdown-icon:hover{
@@ -101,6 +100,42 @@ background-color: red;
 
 .dropdown-icon-user::after {
 content: none;
+}
+
+.category-link li a {
+  text-decoration: none;
+  color: black;
+}
+
+.category-link li a:hover {
+  color: black;
+}
+
+.category-link:hover {
+  background-color: #ef3636;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.category-link {
+  max-width: 220px;
+  padding: 0 0.8rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.logout-button{
+  border: none;
+  background-color: transparent;
+}
+
+.login-link{
+  text-decoration: none;
+  color: white;
+}
+
+.login-link:hover{
+  text-decoration: none;
+  color: white;
 }
 
 @media only screen and (max-width: 990px) {

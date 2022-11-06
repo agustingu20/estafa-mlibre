@@ -1,0 +1,7 @@
+.home{
+    color: var(--clr-rojo);
+}
+
+.home :hover{
+    color: var(--clr-rojo-hover);
+}

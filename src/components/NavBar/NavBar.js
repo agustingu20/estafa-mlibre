@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './navBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
@@ -10,39 +10,56 @@ import {
 import {
   Container, Dropdown, Nav, Navbar,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo-estafa-libre.png';
-import { setSearchResults } from '../../app/searchSlice';
+import { setqueryResults } from '../../app/querySlice';
+import { setOffset } from '../../app/offsetSlice';
+import { categoryList } from '../../assets/categoryList';
 
-const NavBar = () => {
+const NavBar = ({ token, user, logOut }) => {
   const [searchValue, setSearchValue] = useState('');
-  const [query, setQuery] = useState('Vehiculos');
   const dispatch = useDispatch();
-
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-
-  const searchResults = useFetch(
-    `https://api.mercadolibre.com/sites/MLA/search?q=${query}&limit=12`,
-  );
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const searchOnClick = () => {
-    setQuery(searchValue);
+    if (location.pathname !== '/search') {
+      navigate('/search');
+      if (searchValue === '') {
+        dispatch(setqueryResults('vehiculos'));
+      } else {
+        dispatch(setqueryResults(searchValue));
+      }
+    } else {
+      dispatch(setqueryResults(searchValue));
+      dispatch(setOffset(0));
+    }
   };
 
-  useEffect(() => {
-    dispatch(setSearchResults(searchResults.data));
-  }, [searchResults]);
+  const handleChange = (e) => {
+    const { value } = e.target;
+    if (e.code === 'Enter' && location.pathname !== '/search') {
+      navigate('/search');
+      searchOnClick();
+    } else if (e.code === 'Enter') {
+      searchOnClick();
+    } else {
+      setSearchValue(value + e.key);
+    }
+  };
+
+  const handleChangeMobile = (e) => {
+    const { value } = e.target;
+    setSearchValue(value);
+  };
 
   return (
     <>
       <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
+          <Link to={'/'}>
             <img src={logo} alt="logo_estafa_mlibre" className="navbar-logo" />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             className="button-colapse"
@@ -54,16 +71,17 @@ const NavBar = () => {
                   type="text"
                   className="search-input"
                   placeholder="Buscar"
-                  onChange={handleChange}
+                  data-testid="searchInput"
+                  onKeyDown={handleChange}
+                  onChange={handleChangeMobile}
                 />
                 <button className="search-button">
-                  <Link to={'/search'}>
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="search-icon"
-                      onClick={searchOnClick}
-                    />
-                  </Link>
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="search-icon"
+                    onClick={searchOnClick}
+                    data-testid="searchButton"
+                  />
                 </button>
               </div>
               <div className="buttons-container">
@@ -76,21 +94,48 @@ const NavBar = () => {
                       />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item>Action</Dropdown.Item>
-                      <Dropdown.Item>Action 2</Dropdown.Item>
+                      {categoryList.map((list) => (
+                        <ul key={`${list.id}`} className="category-link">
+                          <li>
+                            <Link to={`/search/category/${list.id}`}>
+                              {list.category}
+                            </Link>
+                          </li>
+                        </ul>
+                      ))}
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
                 <div className="d-flex justify-content-center">
-                  <p className="user-text">User</p>
+                  <p className="user-text">
+                    {token ? (
+                      user.nombre
+                    ) : (
+                      <Link className="login-link" to="/login-registro">
+                        Login
+                      </Link>
+                    )}
+                  </p>
                   <Dropdown>
                     <Dropdown.Toggle className="dropdown-icon-user">
                       <FontAwesomeIcon icon={faUser} className="filter-icon" />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Perfil</Dropdown.Item>
-                      <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
-                    </Dropdown.Menu>
+                    {token && (
+                      <Dropdown.Menu>
+                        <ul className="category-link">
+                          <li>
+                            <Link to="/user">Perfil</Link>
+                          </li>
+                        </ul>
+                        <ul className="category-link">
+                          <li>
+                            <button onClick={logOut} className="logout-button">
+                              Cerrar Sesión
+                            </button>
+                          </li>
+                        </ul>
+                      </Dropdown.Menu>
+                    )}
                   </Dropdown>
                 </div>
               </div>

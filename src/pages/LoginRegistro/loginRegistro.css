@@ -1,0 +1,72 @@
+.wrapper-login-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    flex: 1;
+}
+
+.wrapper-login,
+.wrapper-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    min-height: 20rem;
+    min-width: 35%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.wrapper-login-registro:focus-within > :not(:focus-within){
+    opacity: .5;
+}
+
+.wrapper-login .titulo,
+.wrapper-registro .titulo{
+    color: #fff;
+}
+
+.wrapper-login-registro .divisor{
+    height: 1px;
+    width: min(90%, 300px);
+    background-color: var(--clr-rojo);
+}
+
+.wrapper-login{
+    border-radius: 7px 0 0 7px;
+}
+
+.wrapper-login .modal-recupera-pass{
+    border-radius: 7px;
+    max-width: 50%;
+    padding: 2rem;
+    margin: 5rem auto;
+    border-color: var(--clr-rojo);    
+}
+
+.wrapper-login .modal-recupera-pass::backdrop{
+    background-color: rgba(0, 0, 0, .7);
+}
+.wrapper-registro{
+    border-radius: 0 7px 7px 0;
+}
+
+.fake-placeholder{
+    z-index: 0 !important;
+}
+
+
+@media screen and (min-width:900px) {
+    .wrapper-login-registro{
+        flex-direction: row;
+    }
+
+    .wrapper-login-registro .divisor{
+        height: 500px;
+        width: 1px;
+    }
+}

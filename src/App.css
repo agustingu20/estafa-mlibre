@@ -17,16 +17,21 @@ body {
 }
 
 .backgroud-general {
-  min-height: 100vh;
-  background: rgb(255, 255, 255);
   background: linear-gradient(
     173deg,
-    rgba(255, 255, 255, 1) 7%,
+    rgba(255, 255, 255, 1) 7.1%,
     rgba(26, 26, 26, 1) 7.15%,
-    rgba(26, 26, 26, 1) 93%,
-    rgba(255, 255, 255, 1) 93.15%
+    rgba(26, 26, 26, 1) 93.3%,
+    rgba(255, 255, 255, 1) 93.3%
   );
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }

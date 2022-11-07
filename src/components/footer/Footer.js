@@ -23,8 +23,8 @@ const Footer = () => {
     reset();
   };
   return (
-    <footer>
-      <div className='footer-wrapper'>
+    <footer className='footer-wrapper'>
+      <div>
         <Container fluid className='wrapper'>
           <div className='suscribir p-0'>
             <div className='text'>
